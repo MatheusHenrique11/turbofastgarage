@@ -1,0 +1,864 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>TurboFast Garage | Oficina Mecânica, Preparação e Detailing em São José dos Campos</title>
+    <meta
+      name="description"
+      content="TurboFast Garage em São José dos Campos. Manutenção, diagnóstico, preparação e estética automotiva com experiência, precisão e atenção aos detalhes."
+    />
+    <meta
+      name="keywords"
+      content="TurboFast Garage, oficina mecânica São José dos Campos, oficina mecânica Parque Novo Horizonte, manutenção automotiva São José dos Campos, diagnóstico automotivo São José dos Campos, preparação automotiva São José dos Campos, detailing São José dos Campos, estética automotiva São José dos Campos"
+    />
+    <meta name="author" content="TurboFast Garage" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#050505" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- SEO local -->
+    <meta name="geo.region" content="BR-SP" />
+    <meta name="geo.placename" content="São José dos Campos" />
+
+    <!-- Open Graph / redes sociais (og:image, og:url e canonical são injetados no build — ver site.config.js) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="TurboFast Garage" />
+    <meta property="og:title" content="TurboFast Garage | Oficina Mecânica, Preparação e Detailing em São José dos Campos" />
+    <meta
+      property="og:description"
+      content="Manutenção, diagnóstico, preparação e estética automotiva com experiência, precisão e atenção aos detalhes. Parque Novo Horizonte — São José dos Campos/SP."
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Logo da TurboFast Garage ao lado do cofre de motor de um BMW na oficina" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TurboFast Garage | Oficina Mecânica em São José dos Campos" />
+    <meta name="twitter:description" content="Manutenção, diagnóstico, preparação e estética automotiva com precisão em cada detalhe." />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Performance: fontes e imagem do hero com prioridade -->
+    <link rel="preload" href="/fonts/anton-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin />
+    <link
+      rel="preload"
+      as="image"
+      type="image/avif"
+      imagesrcset="/img/bmw-x2-480.avif 480w, /img/bmw-x2-900.avif 900w"
+      imagesizes="(min-width: 900px) 56vw, 100vw"
+      fetchpriority="high"
+    />
+
+    <script>
+      // Ativa os estilos dependentes de JS e garante que o preloader nunca prenda o site
+      document.documentElement.classList.replace('no-js', 'js');
+      window.__tfFailsafe = setTimeout(function () {
+        document.documentElement.classList.add('is-ready');
+      }, 6000);
+    </script>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+
+  <body>
+    <!-- Sprite de ícones -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
+      <symbol id="i-wa" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 20.5 11.8z" />
+        <path fill="currentColor" d="M9.2 8.3c.2-.4.5-.5.8-.5h.5c.2 0 .4.1.5.4l.7 1.7c.1.2 0 .5-.1.7l-.5.6c-.1.1-.2.3-.1.5.6 1.1 1.5 2 2.6 2.6.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.7.8c.2.1.3.3.3.5v.4c0 .4-.2.8-.6 1-.6.3-1.3.4-2 .2-2.6-.8-4.6-2.8-5.4-5.4-.2-.7-.1-1.4.3-2z" />
+      </symbol>
+      <symbol id="i-ig" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.8">
+          <rect x="3" y="3" width="18" height="18" rx="5.2" />
+          <circle cx="12" cy="12" r="4.2" />
+        </g>
+        <circle cx="17.3" cy="6.7" r="1.15" fill="currentColor" />
+      </symbol>
+      <symbol id="i-tt" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M13.6 3.2v11.6a3.6 3.6 0 1 1-3.6-3.6M13.6 3.2c.4 2.7 2.4 4.7 5.2 5" />
+      </symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M6.5 17.5l11-11M8.5 6.5h9v9" />
+      </symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z" />
+          <circle cx="12" cy="9.5" r="2.4" />
+        </g>
+      </symbol>
+      <symbol id="i-route" viewBox="0 0 24 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="6" cy="18" r="2.4" /><circle cx="18" cy="6" r="2.4" />
+          <path d="M8.4 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.6" />
+        </g>
+      </symbol>
+      <symbol id="turbo" viewBox="0 0 100 100">
+        <g fill="none" stroke="currentColor" stroke-linecap="round">
+          <circle cx="50" cy="50" r="47" vector-effect="non-scaling-stroke" style="stroke-width: var(--sw-ring, 1.2)" />
+          <circle cx="50" cy="50" r="42" vector-effect="non-scaling-stroke" style="stroke-width: var(--sw-thin, .6); opacity: .45" />
+          <path vector-effect="non-scaling-stroke" style="stroke-width: var(--sw-main, 1.4)" d="M61 50Q74.87 66.78 63.6 91.85M56.86 58.6Q52.39 79.9 25.76 86.72M47.55 60.72Q28.11 70.51 6.18 53.94M40.09 54.77Q20.31 45.68 19.59 18.2M40.09 45.23Q34.87 24.09 55.91 6.4M47.55 39.28Q60.82 22.02 87.77 27.43M56.86 41.4Q78.62 41.01 91.19 65.46" />
+          <path vector-effect="non-scaling-stroke" style="stroke-width: var(--sw-thin, .6); opacity: .7" d="M67.35 66.59Q63.57 80.08 44.09 93.6M47.85 73.9Q34.95 79.37 12.23 72.57M29.97 63.22Q17.65 56.54 8.81 34.54M27.17 42.58Q24.72 28.79 36.4 8.15M41.57 27.53Q50.82 17.01 74.24 13.28M62.31 29.4Q76.31 30.07 93.82 46.06M73.78 46.78Q81.98 58.14 80.41 81.8" />
+          <circle cx="50" cy="50" r="11" vector-effect="non-scaling-stroke" style="stroke-width: var(--sw-main, 1.4)" />
+          <circle cx="50" cy="50" r="4" vector-effect="non-scaling-stroke" style="stroke-width: var(--sw-thin, .6)" />
+        </g>
+      </symbol>
+    </svg>
+
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- ============ PRELOADER ============ -->
+    <div class="preloader" aria-hidden="true">
+      <div class="preloader__inner">
+        <svg class="preloader__turbo"><use href="#turbo" /></svg>
+        <tf-img name="logo" alt="" sizes="(min-width: 600px) 360px, 70vw" loading="eager" class="preloader__logo"></tf-img>
+        <div class="preloader__bar"><span class="preloader__fill"></span></div>
+        <div class="preloader__meta">
+          <span>Preparando sua experiência...</span>
+          <span class="preloader__count">000</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ HEADER ============ -->
+    <header class="header">
+      <div class="header__inner">
+        <a href="#inicio" class="header__logo" aria-label="TurboFast Garage — voltar ao início">
+          <tf-img name="logo" alt="TurboFast Garage" sizes="170px" loading="eager" class="header__logo-img"></tf-img>
+        </a>
+        <nav class="nav" aria-label="Navegação principal">
+          <ul class="nav__list">
+            <li><a class="nav__link" href="#inicio" data-nav="inicio">Início</a></li>
+            <li><a class="nav__link" href="#sobre" data-nav="sobre">A TurboFast</a></li>
+            <li><a class="nav__link" href="#servicos" data-nav="servicos">Serviços</a></li>
+            <li><a class="nav__link" href="#preparacao" data-nav="preparacao">Preparação</a></li>
+            <li><a class="nav__link" href="#detailing" data-nav="detailing">Detailing</a></li>
+            <li><a class="nav__link" href="#galeria" data-nav="galeria">Galeria</a></li>
+            <li><a class="nav__link" href="#localizacao" data-nav="localizacao">Localização</a></li>
+            <li><a class="nav__link" href="#contato" data-nav="contato">Contato</a></li>
+          </ul>
+        </nav>
+        <a class="btn btn--primary btn--sm header__wa" href="https://wa.me/5512934857571?text=Ol%C3%A1%2C%20TurboFast!%20Vim%20pelo%20site%20e%20gostaria%20de%20falar%20sobre%20meu%20carro." target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="#i-wa" /></svg><span class="btn__label">WhatsApp</span>
+        </a>
+        <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Menu mobile -->
+    <div class="menu" id="menu" inert>
+      <div class="menu__bg" aria-hidden="true"></div>
+      <nav class="menu__nav" aria-label="Menu">
+        <ol class="menu__list">
+          <li><a class="menu__link" href="#inicio"><span>01</span>Início</a></li>
+          <li><a class="menu__link" href="#sobre"><span>02</span>A TurboFast</a></li>
+          <li><a class="menu__link" href="#servicos"><span>03</span>Serviços</a></li>
+          <li><a class="menu__link" href="#preparacao"><span>04</span>Preparação</a></li>
+          <li><a class="menu__link" href="#detailing"><span>05</span>Detailing</a></li>
+          <li><a class="menu__link" href="#galeria"><span>06</span>Galeria</a></li>
+          <li><a class="menu__link" href="#localizacao"><span>07</span>Localização</a></li>
+          <li><a class="menu__link" href="#contato"><span>08</span>Contato</a></li>
+        </ol>
+      </nav>
+      <div class="menu__foot">
+        <a class="btn btn--primary btn--block" href="https://wa.me/5512934857571?text=Ol%C3%A1%2C%20TurboFast!%20Vim%20pelo%20site%20e%20gostaria%20de%20falar%20sobre%20meu%20carro." target="_blank" rel="noopener">
+          <svg class="icon" aria-hidden="true"><use href="#i-wa" /></svg><span class="btn__label">Falar no WhatsApp</span>
+        </a>
+        <div class="menu__social">
+          <a href="https://www.instagram.com/turbofast.garage/" target="_blank" rel="noopener">@turbofast.garage</a>
+          <a href="https://www.instagram.com/turbofast.datails/" target="_blank" rel="noopener">@turbofast.datails</a>
+          <a href="https://www.tiktok.com/@turbofast.garage" target="_blank" rel="noopener">TikTok</a>
+        </div>
+      </div>
+    </div>
+
+    <main id="conteudo">
+      <!-- ============ HERO ============ -->
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="hero__media" aria-hidden="true">
+          <div class="hero__glow hero__glow--purple"></div>
+          <div class="hero__img-wrap">
+            <tf-img name="bmw-x2" alt="" sizes="(min-width: 900px) 56vw, 100vw" loading="eager" fetchpriority="high" class="hero__img"></tf-img>
+            <div class="hero__glint"></div>
+          </div>
+          <div class="hero__glow hero__glow--yellow"></div>
+          <div class="hero__beam"></div>
+          <div class="hero__smoke"><span></span><span></span><span></span></div>
+        </div>
+        <canvas class="hero__particles" aria-hidden="true"></canvas>
+
+        <div class="hero__content container">
+          <p class="hero__eyebrow"><span class="pulse-dot" aria-hidden="true"></span>TurboFast Garage — oficina especializada</p>
+          <h1 class="hero__title" id="hero-title">
+            <span class="hero__line"><span class="hero__line-in">Seu carro.</span></span>
+            <span class="hero__line"><span class="hero__line-in">Nossa <span class="shine-text">especialidade.</span></span></span>
+          </h1>
+          <p class="hero__sub">Manutenção, diagnóstico, preparação e estética automotiva com precisão em cada detalhe.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--lg" data-magnetic href="https://wa.me/5512934857571?text=Ol%C3%A1%2C%20TurboFast!%20Vim%20pelo%20site%20e%20gostaria%20de%20falar%20sobre%20meu%20carro." target="_blank" rel="noopener">
+              <svg class="icon" aria-hidden="true"><use href="#i-wa" /></svg><span class="btn__label">Falar no WhatsApp</span>
+            </a>
+            <a class="btn btn--ghost btn--lg" data-magnetic href="#sobre">
+              <span class="btn__label">Conhecer a TurboFast</span><svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__bottom container">
+          <p class="hero__loc"><svg class="icon" aria-hidden="true"><use href="#i-pin" /></svg>São José dos Campos • SP</p>
+          <a class="hero__scroll" href="#sobre" aria-label="Rolar para a próxima seção"><span>Scroll</span><i></i></a>
+          <ul class="hero__tags" aria-label="Áreas de atuação">
+            <li>Manutenção</li><li>Diagnóstico</li><li>Preparação</li><li>Detailing</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Faixa em movimento -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span class="marquee__item">Manutenção</span><span class="marquee__sep"></span>
+          <span class="marquee__item marquee__item--outline">Diagnóstico</span><span class="marquee__sep"></span>
+          <span class="marquee__item">Preparação</span><span class="marquee__sep"></span>
+          <span class="marquee__item marquee__item--outline">Detailing</span><span class="marquee__sep"></span>
+        </div>
+      </div>
+
+      <!-- ============ A TURBOFAST ============ -->
+      <section class="about section" id="sobre" aria-labelledby="sobre-title">
+        <div class="container">
+          <div class="about__grid">
+            <div class="about__head">
+              <p class="eyebrow" data-reveal><span class="eyebrow__num">01</span>A TurboFast</p>
+              <h2 class="h2" id="sobre-title" data-split>Experiência que vem da prática.</h2>
+            </div>
+            <div class="about__body">
+              <p class="lead" data-reveal>
+                A TurboFast Garage nasceu da experiência de quem passou por diferentes ambientes do universo automotivo, acumulando conhecimento técnico em diferentes especialidades.
+              </p>
+              <p data-reveal>
+                Antes de construir sua própria oficina, <strong>Matheus Henrique</strong> passou por concessionárias, oficinas premium, oficinas de preparação, projetos com carros turbo de pista e oficinas especializadas em restauração.
+              </p>
+              <p data-reveal>
+                Essa experiência hoje se transforma em um atendimento mais criterioso, diagnóstico mais preciso e atenção aos detalhes em cada projeto.
+              </p>
+            </div>
+          </div>
+
+          <div class="path" data-path>
+            <div class="path__rail" aria-hidden="true"><span class="path__fill"></span></div>
+            <ol class="path__list" aria-label="Trajetória profissional de Matheus Henrique">
+              <li class="path__stop"><span class="path__num">01</span><span class="path__name">Concessionárias</span><span class="path__desc">Procedimento de fábrica e rotina técnica.</span></li>
+              <li class="path__stop"><span class="path__num">02</span><span class="path__name">Oficinas premium</span><span class="path__desc">Padrão elevado de cuidado e acabamento.</span></li>
+              <li class="path__stop"><span class="path__num">03</span><span class="path__name">Preparação</span><span class="path__desc">Projetos pensados como um conjunto.</span></li>
+              <li class="path__stop"><span class="path__num">04</span><span class="path__name">Turbo de pista</span><span class="path__desc">Exigência máxima de confiabilidade.</span></li>
+              <li class="path__stop"><span class="path__num">05</span><span class="path__name">Restauração</span><span class="path__desc">Paciência, método e respeito ao original.</span></li>
+              <li class="path__stop path__stop--final"><span class="path__num">Hoje</span><span class="path__name">TurboFast Garage</span><span class="path__desc">Tudo isso em um só lugar.</span></li>
+            </ol>
+          </div>
+
+          <p class="statement" data-words>
+            Hoje, toda essa experiência está concentrada em um único lugar: <span class="statement__hl">TurboFast Garage.</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ QUEM ESTÁ POR TRÁS (EXPERIÊNCIA DO MATHEUS) ============ -->
+      <section class="owner" id="matheus" aria-labelledby="owner-title">
+        <div class="owner__name-bg" aria-hidden="true"><span>Matheus Henrique</span></div>
+        <div class="container owner__grid">
+          <figure class="owner__figure">
+            <div class="owner__halo" aria-hidden="true"></div>
+            <div class="owner__img-wrap">
+              <tf-img name="matheus" alt="Matheus Henrique, proprietário da TurboFast Garage, com o uniforme da oficina" sizes="(min-width: 900px) 44vw, 92vw" class="owner__img"></tf-img>
+            </div>
+            <figcaption class="owner__tag">
+              <span class="owner__tag-name">Matheus Henrique</span>
+              <span class="owner__tag-role">Proprietário · TurboFast Garage</span>
+            </figcaption>
+          </figure>
+
+          <div class="owner__content">
+            <p class="eyebrow" data-reveal><span class="eyebrow__num">02</span>Quem está por trás da TurboFast</p>
+            <h2 class="h2 owner__title" id="owner-title" data-split>Matheus Henrique</h2>
+            <p class="lead" data-reveal>
+              Experiência construída em diferentes ambientes do setor automotivo, passando por concessionárias, oficinas premium, preparação, carros turbo de pista e restauração.
+            </p>
+            <p data-reveal>
+              Hoje, essa experiência está aplicada na TurboFast Garage, com uma proposta de atendimento próximo, diagnóstico criterioso e execução cuidadosa.
+            </p>
+            <ul class="owner__values" data-reveal>
+              <li><span>01</span>Atendimento próximo</li>
+              <li><span>02</span>Diagnóstico criterioso</li>
+              <li><span>03</span>Execução cuidadosa</li>
+            </ul>
+            <div data-reveal>
+              <a class="btn btn--primary" data-magnetic href="https://wa.me/5512934857571?text=Ol%C3%A1%2C%20TurboFast!%20Vim%20pelo%20site%20e%20gostaria%20de%20falar%20sobre%20meu%20carro." target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-wa" /></svg><span class="btn__label">Falar no WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SERVIÇOS ============ -->
+      <section class="services section" id="servicos" aria-labelledby="servicos-title">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow" data-reveal><span class="eyebrow__num">03</span>Serviços</p>
+            <h2 class="h2" id="servicos-title" data-split>Tudo começa pelo diagnóstico.</h2>
+            <p class="section-head__sub" data-reveal>
+              Manutenção automotiva, preparação e estética automotiva em São José dos Campos — três frentes de trabalho com o mesmo critério técnico.
+            </p>
+          </header>
+
+          <div class="cards">
+            <a class="card" href="#diagnostico" data-card>
+              <div class="card__media">
+                <tf-img name="bmw-435i" alt="Motor de BMW 435i aberto para manutenção" sizes="(min-width: 900px) 32vw, 92vw" class="card__img"></tf-img>
+              </div>
+              <span class="card__shine" aria-hidden="true"></span>
+              <div class="card__top">
+                <span class="card__num">01</span>
+                <span class="card__icon" aria-hidden="true"><svg class="icon"><use href="#i-arrow" /></svg></span>
+              </div>
+              <div class="card__body">
+                <h3 class="card__title">Manutenção &amp; diagnóstico</h3>
+                <p class="card__text">Diagnóstico preciso e manutenção preventiva e corretiva para manter seu veículo confiável e funcionando corretamente.</p>
+              </div>
+            </a>
+
+            <a class="card" href="#preparacao" data-card>
+              <div class="card__media">
+                <tf-img name="opala-motor" alt="Motor seis cilindros de Opala preparado e instalado" sizes="(min-width: 900px) 32vw, 92vw" class="card__img"></tf-img>
+              </div>
+              <span class="card__shine" aria-hidden="true"></span>
+              <div class="card__top">
+                <span class="card__num">02</span>
+                <span class="card__icon" aria-hidden="true"><svg class="icon"><use href="#i-arrow" /></svg></span>
+              </div>
+              <div class="card__body">
+                <h3 class="card__title">Preparação</h3>
+                <p class="card__text">Projetos voltados para quem busca evolução, confiabilidade e personalidade na construção do carro.</p>
+              </div>
+            </a>
+
+            <a class="card" href="#detailing" data-card>
+              <div class="card__media">
+                <tf-img name="i30-interior" alt="Interior de couro higienizado de um Hyundai i30" sizes="(min-width: 900px) 32vw, 92vw" class="card__img"></tf-img>
+              </div>
+              <span class="card__shine" aria-hidden="true"></span>
+              <div class="card__top">
+                <span class="card__num">03</span>
+                <span class="card__icon" aria-hidden="true"><svg class="icon"><use href="#i-arrow" /></svg></span>
+              </div>
+              <div class="card__body">
+                <h3 class="card__title">Estética automotiva</h3>
+                <p class="card__text">Cuidados estéticos e detailing para preservar, recuperar e valorizar cada detalhe do veículo.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ MANUTENÇÃO & DIAGNÓSTICO ============ -->
+      <section class="diag section" id="diagnostico" aria-labelledby="diag-title">
+        <div class="diag__grid-bg" aria-hidden="true"></div>
+        <div class="container">
+          <header class="section-head section-head--wide">
+            <p class="eyebrow" data-reveal><span class="eyebrow__num">04</span>Manutenção &amp; diagnóstico</p>
+            <h2 class="h2" id="diag-title" data-split>Diagnóstico antes de qualquer decisão.</h2>
+          </header>
+
+          <div class="diag__layout">
+            <div class="diag__visual">
+              <div class="diag__frame" data-cursor="img">
+                <div class="diag__imgs">
+                  <div class="diag__img is-active" data-step-img>
+                    <tf-img name="bmw-x2" alt="Cofre do motor de um BMW X2 aberto para análise" sizes="(min-width: 900px) 40vw, 92vw"></tf-img>
+                  </div>
+                  <div class="diag__img" data-step-img>
+                    <tf-img name="peugeot-308" alt="Motor de Peugeot 308 com a tampa de válvulas removida para inspeção" sizes="(min-width: 900px) 40vw, 92vw"></tf-img>
+                  </div>
+                  <div class="diag__img" data-step-img>
+                    <tf-img name="bancada-cabecote" alt="Cabeçote e cárter organizados na bancada técnica" sizes="(min-width: 900px) 40vw, 92vw"></tf-img>
+                  </div>
+                  <div class="diag__img" data-step-img>
+                    <tf-img name="bmw-435i" alt="Motor de BMW 435i em manutenção, com o trem de válvulas exposto" sizes="(min-width: 900px) 40vw, 92vw"></tf-img>
+                  </div>
+                  <div class="diag__img" data-step-img>
+                    <tf-img name="azera" alt="Hyundai Azera prata pronto para entrega na oficina" sizes="(min-width: 900px) 40vw, 92vw"></tf-img>
+                  </div>
+                </div>
+                <div class="diag__scan" aria-hidden="true"><span></span></div>
+                <span class="corner corner--tl" aria-hidden="true"></span>
+                <span class="corner corner--tr" aria-hidden="true"></span>
+                <span class="corner corner--bl" aria-hidden="true"></span>
+                <span class="corner corner--br" aria-hidden="true"></span>
+                <div class="diag__hud" aria-hidden="true">
+                  <span class="diag__hud-label"><i class="pulse-dot"></i>TF · Diag</span>
+                  <span class="diag__hud-count"><b data-step-count>01</b> / 05</span>
+                </div>
+                <div class="diag__caption" aria-hidden="true" data-step-caption>Análise</div>
+              </div>
+            </div>
+
+            <div class="diag__steps-wrap">
+              <div class="diag__rail" aria-hidden="true"><span class="diag__rail-fill"></span></div>
+              <ol class="diag__steps">
+                <li class="diag__step is-active" data-step>
+                  <span class="diag__step-num">01</span>
+                  <div>
+                    <h3 class="diag__step-title">Análise</h3>
+                    <p>Ouvimos o relato, entendemos o histórico do carro e fazemos a primeira avaliação com calma.</p>
+                  </div>
+                </li>
+                <li class="diag__step" data-step>
+                  <span class="diag__step-num">02</span>
+                  <div>
+                    <h3 class="diag__step-title">Diagnóstico</h3>
+                    <p>Leitura de dados, testes e inspeção para encontrar a causa real — não apenas o sintoma.</p>
+                  </div>
+                </li>
+                <li class="diag__step" data-step>
+                  <span class="diag__step-num">03</span>
+                  <div>
+                    <h3 class="diag__step-title">Planejamento</h3>
+                    <p>Você entende o que foi encontrado, o que precisa ser feito e em qual ordem de prioridade.</p>
+                  </div>
+                </li>
+                <li class="diag__step" data-step>
+                  <span class="diag__step-num">04</span>
+                  <div>
+                    <h3 class="diag__step-title">Execução</h3>
+                    <p>Serviço feito com o procedimento correto, ferramentas adequadas e cuidado com cada componente.</p>
+                  </div>
+                </li>
+                <li class="diag__step" data-step>
+                  <span class="diag__step-num">05</span>
+                  <div>
+                    <h3 class="diag__step-title">Entrega</h3>
+                    <p>Conferência final, teste e explicação clara do que foi feito antes de devolver o carro.</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="diag__quote">
+            <blockquote>
+              <p data-words>Nosso objetivo é entender o problema antes de simplesmente trocar peças.</p>
+            </blockquote>
+            <div data-reveal>
+              <a class="btn btn--primary btn--lg" data-magnetic href="https://wa.me/5512934857571?text=Ol%C3%A1%2C%20TurboFast!%20Gostaria%20de%20agendar%20um%20diagn%C3%B3stico%20para%20o%20meu%20carro." target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-wa" /></svg><span class="btn__label">Agendar diagnóstico</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PREPARAÇÃO ============ -->
+      <section class="prep section" id="preparacao" aria-labelledby="prep-title">
+        <div class="prep__stripes" aria-hidden="true"><span></span><span></span></div>
+        <div class="container">
+          <div class="prep__top">
+            <div class="prep__intro">
+              <p class="eyebrow" data-reveal><span class="eyebrow__num">05</span>Preparação</p>
+              <h2 class="h2 prep__title" id="prep-title" data-split>Para quem quer <span class="accent">mais</span> do carro.</h2>
+              <p class="lead" data-reveal>
+                Projetos de preparação exigem planejamento, conhecimento e responsabilidade. Cada alteração deve fazer sentido dentro do conjunto.
+              </p>
+            </div>
+            <div class="prep__media">
+              <svg class="prep__turbo" aria-hidden="true"><use href="#turbo" /></svg>
+              <figure class="prep__fig prep__fig--a" data-cursor="img">
+                <tf-img name="opala-montagem" alt="Motor seis cilindros pintado de azul recebendo coletor e periféricos" sizes="(min-width: 900px) 30vw, 60vw"></tf-img>
+              </figure>
+              <figure class="prep__fig prep__fig--b" data-cursor="img">
+                <tf-img name="peugeot-308" alt="Mangueiras de silicone do sistema turbo de um Peugeot 308" sizes="(min-width: 900px) 18vw, 40vw"></tf-img>
+              </figure>
+            </div>
+          </div>
+
+          <ul class="prep__list" data-prep-list>
+            <li class="prep__item" data-prep-img="0">
+              <span class="prep__idx">/01</span><span class="prep__name">Turbo</span>
+              <span class="prep__desc">Sistemas sobrealimentados pedem critério em cada componente e em cada ajuste.</span>
+            </li>
+            <li class="prep__item" data-prep-img="1">
+              <span class="prep__idx">/02</span><span class="prep__name">Admissão</span>
+              <span class="prep__desc">Fluxo de ar tratado como parte do conjunto, não como peça isolada.</span>
+            </li>
+            <li class="prep__item" data-prep-img="2">
+              <span class="prep__idx">/03</span><span class="prep__name">Escape</span>
+              <span class="prep__desc">Escoamento, durabilidade e som em equilíbrio com o restante do projeto.</span>
+            </li>
+            <li class="prep__item" data-prep-img="3">
+              <span class="prep__idx">/04</span><span class="prep__name">Gerenciamento</span>
+              <span class="prep__desc">Toda alteração mecânica precisa conversar com o gerenciamento do motor.</span>
+            </li>
+            <li class="prep__item" data-prep-img="4">
+              <span class="prep__idx">/05</span><span class="prep__name">Motor</span>
+              <span class="prep__desc">Montagem e revisão com atenção a tolerâncias, torques e procedimento.</span>
+            </li>
+            <li class="prep__item" data-prep-img="5">
+              <span class="prep__idx">/06</span><span class="prep__name">Performance</span>
+              <span class="prep__desc">O resultado de um projeto bem planejado — nunca de uma peça sozinha.</span>
+            </li>
+          </ul>
+
+          <!-- Prévia que acompanha o cursor (desktop) -->
+          <div class="prep__preview" aria-hidden="true">
+            <div class="prep__preview-inner">
+              <tf-img name="peugeot-308" alt="" sizes="320px"></tf-img>
+              <tf-img name="opala-motor" alt="" sizes="320px"></tf-img>
+              <tf-img name="opala-montagem" alt="" sizes="320px"></tf-img>
+              <tf-img name="bmw-435i" alt="" sizes="320px"></tf-img>
+              <tf-img name="opala-bloco" alt="" sizes="320px"></tf-img>
+              <tf-img name="opala-pintura" alt="" sizes="320px"></tf-img>
+            </div>
+          </div>
+
+          <div class="prep__cta">
+            <p data-reveal>
+              Sem promessas de números: cada projeto começa por uma conversa sobre objetivo, uso do carro e o que realmente faz sentido para ele.
+            </p>
+            <div data-reveal>
+              <a class="btn btn--primary btn--lg" data-magnetic href="https://wa.me/5512934857571?text=Ol%C3%A1%2C%20TurboFast!%20Quero%20conversar%20sobre%20um%20projeto%20de%20prepara%C3%A7%C3%A3o." target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-wa" /></svg><span class="btn__label">Falar sobre meu projeto</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ TURBOFAST DETAILS ============ -->
+      <section class="details" id="detailing" aria-labelledby="details-title">
+        <div class="details__panel">
+          <div class="container">
+            <div class="details__top">
+              <div class="details__head">
+                <p class="eyebrow eyebrow--dark" data-reveal><span class="eyebrow__num">06</span>TurboFast Details</p>
+                <h2 class="details__title" id="details-title" data-split>Seu carro também merece atenção aos <em>detalhes.</em></h2>
+              </div>
+              <div class="details__intro">
+                <p class="lead" data-reveal>
+                  A <strong>TurboFast Details</strong> é a frente de estética automotiva da TurboFast Garage: lavagem técnica, polimento, acabamento e interior tratados com o mesmo critério da mecânica.
+                </p>
+                <p data-reveal>
+                  Os trabalhos de detailing têm um Instagram próprio, separado do perfil da oficina. É lá que você acompanha cada resultado.
+                </p>
+                <div class="details__actions" data-reveal>
+                  <a class="btn btn--dark" data-magnetic href="https://www.instagram.com/turbofast.datails/" target="_blank" rel="noopener">
+                    <svg class="icon" aria-hidden="true"><use href="#i-ig" /></svg><span class="btn__label">Conhecer TurboFast Details</span>
+                  </a>
+                  <a class="btn btn--line-dark" data-magnetic href="https://wa.me/5512934857571?text=Ol%C3%A1%2C%20TurboFast!%20Gostaria%20de%20um%20or%C3%A7amento%20de%20est%C3%A9tica%20automotiva%20(detailing)." target="_blank" rel="noopener">
+                    <svg class="icon" aria-hidden="true"><use href="#i-wa" /></svg><span class="btn__label">Orçamento de detailing</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="wash" data-wash>
+              <div class="wash__layer wash__layer--before">
+                <tf-img name="i30-espuma" alt="Hyundai i30 coberto de espuma durante a lavagem técnica" sizes="(min-width: 900px) 84vw, 92vw"></tf-img>
+              </div>
+              <div class="wash__layer wash__layer--after">
+                <tf-img name="i30-resultado" alt="O mesmo Hyundai i30 limpo e com brilho após o detailing" sizes="(min-width: 900px) 84vw, 92vw"></tf-img>
+              </div>
+              <span class="wash__hint" aria-hidden="true"><i></i>Role para lavar</span>
+              <span class="wash__label wash__label--before">Processo</span>
+              <span class="wash__label wash__label--after">Resultado</span>
+            </div>
+
+            <ul class="details__services" aria-label="Serviços de estética automotiva">
+              <li data-reveal><span>01</span>Pintura</li>
+              <li data-reveal><span>02</span>Polimento</li>
+              <li data-reveal><span>03</span>Acabamento</li>
+              <li data-reveal><span>04</span>Interior</li>
+              <li data-reveal><span>05</span>Rodas</li>
+              <li data-reveal><span>06</span>Carroceria</li>
+            </ul>
+
+            <div class="details__gallery">
+              <a class="dg dg--a" href="/img/i30-porta-1440.webp" data-lightbox data-title="Acabamento" data-meta="Painel de porta · Hyundai i30" data-cursor="view">
+                <tf-img name="i30-porta" alt="Painel de porta do Hyundai i30 limpo e hidratado" sizes="(min-width: 900px) 40vw, 92vw"></tf-img>
+                <span class="dg__cap">Acabamento</span>
+              </a>
+              <a class="dg dg--b" href="/img/i30-banco-traseiro-1440.webp" data-lightbox data-title="Interior" data-meta="Bancos traseiros · Hyundai i30" data-cursor="view">
+                <tf-img name="i30-banco-traseiro" alt="Bancos traseiros de couro higienizados" sizes="(min-width: 900px) 26vw, 46vw"></tf-img>
+                <span class="dg__cap">Interior</span>
+              </a>
+              <a class="dg dg--c" href="/img/i30-porta-malas-1440.webp" data-lightbox data-title="Porta-malas" data-meta="Carpete e acabamento · Hyundai i30" data-cursor="view">
+                <tf-img name="i30-porta-malas" alt="Porta-malas com carpete higienizado" sizes="(min-width: 900px) 26vw, 46vw"></tf-img>
+                <span class="dg__cap">Porta-malas</span>
+              </a>
+              <a class="dg dg--d" href="https://www.instagram.com/turbofast.datails/" target="_blank" rel="noopener" data-cursor="open">
+                <tf-img name="details-marca" alt="Identidade visual da TurboFast Details" sizes="(min-width: 900px) 26vw, 92vw"></tf-img>
+                <span class="dg__cap"><svg class="icon" aria-hidden="true"><use href="#i-ig" /></svg>@turbofast.datails</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ GALERIA ============ -->
+      <section class="gallery section" id="galeria" aria-labelledby="galeria-title">
+        <div class="container">
+          <header class="gallery__head">
+            <p class="eyebrow" data-reveal><span class="eyebrow__num">07</span>Galeria</p>
+            <h2 class="h2 gallery__title" id="galeria-title" data-split>Projetos &amp; bastidores</h2>
+            <p class="section-head__sub" data-reveal>Trabalhos reais feitos na TurboFast: manutenção, motores, preparação e detailing.</p>
+          </header>
+
+          <div class="gallery__cols">
+            <div class="gallery__col" data-speed="-0.06">
+              <a class="g-item g-item--tall" href="/img/bmw-435i-900.webp" data-lightbox data-title="BMW 435i" data-meta="Motor · Manutenção" data-cursor="view">
+                <tf-img name="bmw-435i" alt="BMW 435i com o motor aberto para manutenção" sizes="(min-width: 900px) 38vw, 46vw"></tf-img>
+                <span class="g-item__info"><span class="g-item__title">BMW 435i</span><span class="g-item__meta">Motor · Manutenção</span><svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></span>
+              </a>
+              <a class="g-item g-item--square" href="/img/i30-resultado-1440.webp" data-lightbox data-title="Hyundai i30 CW" data-meta="Detailing · Exterior" data-cursor="view">
+                <tf-img name="i30-resultado" alt="Hyundai i30 CW prata após o detailing" sizes="(min-width: 900px) 38vw, 46vw"></tf-img>
+                <span class="g-item__info"><span class="g-item__title">Hyundai i30 CW</span><span class="g-item__meta">Detailing · Exterior</span><svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></span>
+              </a>
+              <a class="g-item g-item--portrait" href="/img/bancada-cabecote-1202.webp" data-lightbox data-title="Cabeçote" data-meta="Bancada técnica" data-cursor="view">
+                <tf-img name="bancada-cabecote" alt="Cabeçote de motor na bancada técnica da oficina" sizes="(min-width: 900px) 38vw, 46vw"></tf-img>
+                <span class="g-item__info"><span class="g-item__title">Cabeçote</span><span class="g-item__meta">Bancada técnica</span><svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></span>
+              </a>
+            </div>
+            <div class="gallery__col gallery__col--offset" data-speed="0.08">
+              <a class="g-item g-item--portrait" href="/img/opala-motor-960.webp" data-lightbox data-title="Chevrolet Opala" data-meta="Preparação · 6 cilindros" data-cursor="view">
+                <tf-img name="opala-motor" alt="Motor seis cilindros vermelho instalado em um Opala azul" sizes="(min-width: 900px) 30vw, 46vw"></tf-img>
+                <span class="g-item__info"><span class="g-item__title">Chevrolet Opala</span><span class="g-item__meta">Preparação · 6 cilindros</span><svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></span>
+              </a>
+              <a class="g-item g-item--tall" href="/img/bmw-x2-900.webp" data-lightbox data-title="BMW X2" data-meta="Revisão" data-cursor="view">
+                <tf-img name="bmw-x2" alt="BMW X2 preto com o capô aberto na oficina" sizes="(min-width: 900px) 30vw, 46vw"></tf-img>
+                <span class="g-item__info"><span class="g-item__title">BMW X2</span><span class="g-item__meta">Revisão</span><svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></span>
+              </a>
+              <a class="g-item g-item--wide" href="/img/opala-pintura-1202.webp" data-lightbox data-title="Bloco Opala" data-meta="Pintura &amp; proteção" data-cursor="view">
+                <tf-img name="opala-pintura" alt="Bloco de motor Opala recém-pintado de azul" sizes="(min-width: 900px) 30vw, 46vw"></tf-img>
+                <span class="g-item__info"><span class="g-item__title">Bloco Opala</span><span class="g-item__meta">Pintura &amp; proteção</span><svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></span>
+              </a>
+            </div>
+            <div class="gallery__col gallery__col--small" data-speed="-0.12">
+              <a class="g-item g-item--tall" href="/img/peugeot-308-719.webp" data-lightbox data-title="Peugeot 308" data-meta="Diagnóstico · Motor" data-cursor="view">
+                <tf-img name="peugeot-308" alt="Peugeot 308 com o comando de válvulas exposto" sizes="(min-width: 900px) 24vw, 46vw"></tf-img>
+                <span class="g-item__info"><span class="g-item__title">Peugeot 308</span><span class="g-item__meta">Diagnóstico · Motor</span><svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></span>
+              </a>
+              <a class="g-item g-item--portrait" href="/img/opala-montagem-1202.webp" data-lightbox data-title="Opala 6 cilindros" data-meta="Montagem de periféricos" data-cursor="view">
+                <tf-img name="opala-montagem" alt="Motor Opala azul recebendo coletor de admissão" sizes="(min-width: 900px) 24vw, 46vw"></tf-img>
+                <span class="g-item__info"><span class="g-item__title">Opala 6 cilindros</span><span class="g-item__meta">Montagem de periféricos</span><svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></span>
+              </a>
+              <a class="g-item g-item--portrait" href="/img/azera-1202.webp" data-lightbox data-title="Hyundai Azera" data-meta="Manutenção" data-cursor="view">
+                <tf-img name="azera" alt="Hyundai Azera prata na oficina" sizes="(min-width: 900px) 24vw, 46vw"></tf-img>
+                <span class="g-item__info"><span class="g-item__title">Hyundai Azera</span><span class="g-item__meta">Manutenção</span><svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></span>
+              </a>
+              <a class="g-item g-item--square" href="/img/opala-bloco-1202.webp" data-lightbox data-title="Bloco 6 cilindros" data-meta="Preparação para montagem" data-cursor="view">
+                <tf-img name="opala-bloco" alt="Bloco de motor seis cilindros limpo em um cavalete" sizes="(min-width: 900px) 24vw, 46vw"></tf-img>
+                <span class="g-item__info"><span class="g-item__title">Bloco 6 cilindros</span><span class="g-item__meta">Preparação para montagem</span><svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FRASE DE IMPACTO ============ -->
+      <section class="manifesto" aria-label="Manifesto TurboFast">
+        <div class="manifesto__glow" aria-hidden="true"></div>
+        <p class="manifesto__text" data-manifesto>
+          <span class="manifesto__line"><span class="w w--y">Performance</span> <span class="w">é</span> <span class="w">o</span> <span class="w">resultado.</span></span>
+          <span class="manifesto__line"><span class="w w--p">Precisão</span> <span class="w">é</span> <span class="w">o</span> <span class="w">caminho.</span></span>
+        </p>
+      </section>
+
+      <!-- ============ LOCALIZAÇÃO ============ -->
+      <section class="location section" id="localizacao" aria-labelledby="local-title">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow" data-reveal><span class="eyebrow__num">08</span>Localização</p>
+            <h2 class="h2" id="local-title" data-split>Venha conhecer a TurboFast</h2>
+          </header>
+
+          <div class="location__grid">
+            <div class="location__info">
+              <p class="location__brand" data-reveal>TurboFast Garage</p>
+              <p class="location__city" data-reveal>São José dos Campos - SP</p>
+              <address class="location__address" data-reveal>
+                Rua das Datilógrafas, nº 290<br />
+                Parque Novo Horizonte<br />
+                São José dos Campos - SP<br />
+                CEP 12225-820
+              </address>
+              <p class="location__note" data-reveal>Agende seu atendimento pelo WhatsApp.</p>
+              <div class="location__actions" data-reveal>
+                <a class="btn btn--primary" data-magnetic href="https://www.google.com/maps/search/?api=1&amp;query=Rua%20das%20Datil%C3%B3grafas%2C%20290%20-%20Parque%20Novo%20Horizonte%2C%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP%2C%2012225-820" target="_blank" rel="noopener">
+                  <svg class="icon" aria-hidden="true"><use href="#i-pin" /></svg><span class="btn__label">Abrir no Google Maps</span>
+                </a>
+                <a class="btn btn--ghost" data-magnetic href="https://www.google.com/maps/dir/?api=1&amp;destination=Rua%20das%20Datil%C3%B3grafas%2C%20290%20-%20Parque%20Novo%20Horizonte%2C%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP%2C%2012225-820" target="_blank" rel="noopener">
+                  <svg class="icon" aria-hidden="true"><use href="#i-route" /></svg><span class="btn__label">Traçar rota</span>
+                </a>
+                <a class="btn btn--ghost" data-magnetic href="https://wa.me/5512934857571?text=Ol%C3%A1%2C%20TurboFast!%20Gostaria%20de%20agendar%20um%20atendimento%20na%20oficina." target="_blank" rel="noopener">
+                  <svg class="icon" aria-hidden="true"><use href="#i-wa" /></svg><span class="btn__label">Agendar pelo WhatsApp</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="location__map" data-reveal>
+              <iframe
+                title="Mapa: TurboFast Garage — Rua das Datilógrafas, 290, Parque Novo Horizonte, São José dos Campos - SP"
+                src="https://www.google.com/maps?q=Rua%20das%20Datil%C3%B3grafas%2C%20290%20-%20Parque%20Novo%20Horizonte%2C%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP%2C%2012225-820&amp;hl=pt-BR&amp;z=16&amp;output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+              <span class="corner corner--tl" aria-hidden="true"></span>
+              <span class="corner corner--tr" aria-hidden="true"></span>
+              <span class="corner corner--bl" aria-hidden="true"></span>
+              <span class="corner corner--br" aria-hidden="true"></span>
+              <span class="location__map-hint" aria-hidden="true">Mapa interativo · Google Maps</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CONTATO ============ -->
+      <section class="contact" id="contato" aria-labelledby="contato-title">
+        <div class="contact__glow" aria-hidden="true"></div>
+        <div class="container">
+          <p class="eyebrow" data-reveal><span class="eyebrow__num">09</span>Contato</p>
+          <h2 class="contact__title" id="contato-title">
+            <span class="contact__line" data-split>Seu carro está pronto.</span>
+            <span class="contact__line contact__line--accent" data-split>E você?</span>
+          </h2>
+          <p class="contact__text" data-reveal>Conte para a gente o que seu carro precisa.</p>
+
+          <div class="contact__picker" data-reveal>
+            <p class="contact__picker-label" id="picker-label">Sobre o que você quer falar?</p>
+            <div class="chips" role="group" aria-labelledby="picker-label" data-wa-picker>
+              <button type="button" class="chip" aria-pressed="false" data-msg="Olá, TurboFast! Vim pelo site e preciso de manutenção para o meu carro.">Manutenção</button>
+              <button type="button" class="chip" aria-pressed="false" data-msg="Olá, TurboFast! Gostaria de agendar um diagnóstico para o meu carro.">Diagnóstico</button>
+              <button type="button" class="chip" aria-pressed="false" data-msg="Olá, TurboFast! Quero conversar sobre um projeto de preparação.">Preparação</button>
+              <button type="button" class="chip" aria-pressed="false" data-msg="Olá, TurboFast! Gostaria de um orçamento de estética automotiva (detailing).">Detailing</button>
+            </div>
+          </div>
+
+          <div class="contact__cta" data-reveal>
+            <a class="btn btn--primary btn--xl" data-magnetic data-wa-main href="https://wa.me/5512934857571?text=Ol%C3%A1%2C%20TurboFast!%20Vim%20pelo%20site%20e%20gostaria%20de%20falar%20sobre%20meu%20carro." target="_blank" rel="noopener">
+              <svg class="icon" aria-hidden="true"><use href="#i-wa" /></svg><span class="btn__label">Falar com a TurboFast no WhatsApp</span>
+            </a>
+            <a class="contact__phone" href="https://wa.me/5512934857571" target="_blank" rel="noopener">+55 12 93485-7571</a>
+          </div>
+
+          <div class="social">
+            <p class="social__label" data-reveal>Acompanhe a TurboFast</p>
+            <ul class="social__list">
+              <li data-reveal>
+                <a class="social__card" href="https://www.instagram.com/turbofast.garage/" target="_blank" rel="noopener" aria-label="Instagram TurboFast Garage (@turbofast.garage)">
+                  <span class="social__icon"><svg class="icon" aria-hidden="true"><use href="#i-ig" /></svg></span>
+                  <span class="social__net">Instagram</span>
+                  <span class="social__name">TurboFast Garage</span>
+                  <span class="social__short">Garage</span>
+                  <span class="social__handle">@turbofast.garage</span>
+                  <span class="social__desc">Manutenção, diagnóstico e preparação automotiva.</span>
+                  <svg class="icon social__arrow" aria-hidden="true"><use href="#i-arrow" /></svg>
+                </a>
+              </li>
+              <li data-reveal>
+                <a class="social__card social__card--details" href="https://www.instagram.com/turbofast.datails/" target="_blank" rel="noopener" aria-label="Instagram TurboFast Details (@turbofast.datails)">
+                  <span class="social__icon"><svg class="icon" aria-hidden="true"><use href="#i-ig" /></svg></span>
+                  <span class="social__net">Instagram</span>
+                  <span class="social__name">TurboFast Details</span>
+                  <span class="social__short">Details</span>
+                  <span class="social__handle">@turbofast.datails</span>
+                  <span class="social__desc">Estética automotiva e detailing.</span>
+                  <svg class="icon social__arrow" aria-hidden="true"><use href="#i-arrow" /></svg>
+                </a>
+              </li>
+              <li data-reveal>
+                <a class="social__card social__card--tiktok" href="https://www.tiktok.com/@turbofast.garage" target="_blank" rel="noopener" aria-label="TikTok TurboFast Garage (@turbofast.garage)">
+                  <span class="social__icon"><svg class="icon" aria-hidden="true"><use href="#i-tt" /></svg></span>
+                  <span class="social__net">TikTok</span>
+                  <span class="social__name">TurboFast Garage</span>
+                  <span class="social__short">Garage</span>
+                  <span class="social__handle">@turbofast.garage</span>
+                  <span class="social__desc">Bastidores da oficina, projetos, carros, preparação e rotina da TurboFast.</span>
+                  <svg class="icon social__arrow" aria-hidden="true"><use href="#i-arrow" /></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <a href="#inicio" class="footer__logo" aria-label="TurboFast Garage — voltar ao início">
+              <tf-img name="logo" alt="TurboFast Garage" sizes="260px" class="footer__logo-img"></tf-img>
+            </a>
+            <p class="footer__seo">
+              Oficina mecânica em São José dos Campos, no Parque Novo Horizonte. Manutenção automotiva, diagnóstico automotivo, preparação automotiva e estética automotiva / detailing.
+            </p>
+          </div>
+
+          <nav class="footer__col" aria-label="Links do rodapé">
+            <p class="footer__label">Navegação</p>
+            <ul>
+              <li><a href="#inicio">Início</a></li>
+              <li><a href="#sobre">A TurboFast</a></li>
+              <li><a href="#servicos">Serviços</a></li>
+              <li><a href="#preparacao">Preparação</a></li>
+              <li><a href="#detailing">Details</a></li>
+              <li><a href="#galeria">Galeria</a></li>
+              <li><a href="#localizacao">Localização</a></li>
+              <li><a href="#contato">Contato</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer__col">
+            <p class="footer__label">Contato</p>
+            <p class="footer__item">
+              <span>WhatsApp</span>
+              <a href="https://wa.me/5512934857571" target="_blank" rel="noopener">+55 12 93485-7571</a>
+            </p>
+            <p class="footer__item">
+              <span>Endereço</span>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Rua%20das%20Datil%C3%B3grafas%2C%20290%20-%20Parque%20Novo%20Horizonte%2C%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP%2C%2012225-820" target="_blank" rel="noopener">
+                Rua das Datilógrafas, 290<br />Parque Novo Horizonte<br />São José dos Campos - SP
+              </a>
+            </p>
+          </div>
+
+          <div class="footer__col">
+            <p class="footer__label">Redes</p>
+            <ul class="footer__social">
+              <li><a href="https://www.instagram.com/turbofast.garage/" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-ig" /></svg>@turbofast.garage</a></li>
+              <li><a href="https://www.instagram.com/turbofast.datails/" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-ig" /></svg>@turbofast.datails</a></li>
+              <li><a href="https://www.tiktok.com/@turbofast.garage" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-tt" /></svg>TikTok @turbofast.garage</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>© 2026 TurboFast Garage.<br class="br-mobile" /> Todos os direitos reservados.</p>
+          <a href="#inicio" class="footer__top">Voltar ao topo <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+        </div>
+      </div>
+      <div class="footer__word" aria-hidden="true">TurboFast</div>
+    </footer>
+
+    <!-- WhatsApp flutuante (mobile) -->
+    <a class="float-wa" href="https://wa.me/5512934857571?text=Ol%C3%A1%2C%20TurboFast!%20Vim%20pelo%20site%20e%20gostaria%20de%20falar%20sobre%20meu%20carro." target="_blank" rel="noopener" aria-label="Falar com a TurboFast no WhatsApp">
+      <svg class="icon" aria-hidden="true"><use href="#i-wa" /></svg><span>WhatsApp</span>
+    </a>
+  </body>
+</html>

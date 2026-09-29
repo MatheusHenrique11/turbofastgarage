@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="22" fill="#050505"/>
+  <g fill="none" stroke-linecap="round" transform="translate(50 50) scale(.86) translate(-50 -50)">
+    <circle cx="50" cy="50" r="45" stroke="#FFD400" stroke-width="5"/>
+    <path stroke="#FFD400" stroke-width="5" d="M61 50Q74.87 66.78 63.6 91.85M56.86 58.6Q52.39 79.9 25.76 86.72M47.55 60.72Q28.11 70.51 6.18 53.94M40.09 54.77Q20.31 45.68 19.59 18.2M40.09 45.23Q34.87 24.09 55.91 6.4M47.55 39.28Q60.82 22.02 87.77 27.43M56.86 41.4Q78.62 41.01 91.19 65.46"/>
+    <circle cx="50" cy="50" r="10" fill="#6C00FF" stroke="#FFD400" stroke-width="4"/>
+  </g>
+</svg>

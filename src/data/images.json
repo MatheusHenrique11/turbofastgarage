@@ -1,0 +1,182 @@
+{
+  "bmw-x2": {
+    "w": 900,
+    "h": 1600,
+    "widths": [
+      480,
+      900
+    ],
+    "alpha": false
+  },
+  "bmw-435i": {
+    "w": 900,
+    "h": 1600,
+    "widths": [
+      480,
+      900
+    ],
+    "alpha": false
+  },
+  "peugeot-308": {
+    "w": 719,
+    "h": 1600,
+    "widths": [
+      719
+    ],
+    "alpha": false
+  },
+  "bancada-cabecote": {
+    "w": 1202,
+    "h": 1600,
+    "widths": [
+      480,
+      800,
+      1202
+    ],
+    "alpha": false
+  },
+  "azera": {
+    "w": 1202,
+    "h": 1600,
+    "widths": [
+      480,
+      800,
+      1202
+    ],
+    "alpha": false
+  },
+  "opala-motor": {
+    "w": 960,
+    "h": 1280,
+    "widths": [
+      480,
+      960
+    ],
+    "alpha": false
+  },
+  "opala-bloco": {
+    "w": 1202,
+    "h": 1600,
+    "widths": [
+      480,
+      800,
+      1202
+    ],
+    "alpha": false
+  },
+  "opala-pintura": {
+    "w": 1202,
+    "h": 1600,
+    "widths": [
+      480,
+      800,
+      1202
+    ],
+    "alpha": false
+  },
+  "opala-montagem": {
+    "w": 1202,
+    "h": 1600,
+    "widths": [
+      480,
+      800,
+      1202
+    ],
+    "alpha": false
+  },
+  "i30-espuma": {
+    "w": 1440,
+    "h": 1440,
+    "widths": [
+      480,
+      800,
+      1200,
+      1440
+    ],
+    "alpha": false
+  },
+  "i30-resultado": {
+    "w": 1440,
+    "h": 1440,
+    "widths": [
+      480,
+      800,
+      1200,
+      1440
+    ],
+    "alpha": false
+  },
+  "i30-porta-malas": {
+    "w": 1440,
+    "h": 1440,
+    "widths": [
+      480,
+      800,
+      1200,
+      1440
+    ],
+    "alpha": false
+  },
+  "i30-banco-traseiro": {
+    "w": 1440,
+    "h": 1440,
+    "widths": [
+      480,
+      800,
+      1200,
+      1440
+    ],
+    "alpha": false
+  },
+  "i30-porta": {
+    "w": 1440,
+    "h": 1440,
+    "widths": [
+      480,
+      800,
+      1200,
+      1440
+    ],
+    "alpha": false
+  },
+  "i30-interior": {
+    "w": 1440,
+    "h": 1440,
+    "widths": [
+      480,
+      800,
+      1200,
+      1440
+    ],
+    "alpha": false
+  },
+  "details-marca": {
+    "w": 1280,
+    "h": 1280,
+    "widths": [
+      480,
+      800,
+      1280
+    ],
+    "alpha": false
+  },
+  "matheus": {
+    "w": 1089,
+    "h": 1444,
+    "widths": [
+      560,
+      1089
+    ],
+    "alpha": true
+  },
+  "logo": {
+    "w": 2036,
+    "h": 642,
+    "widths": [
+      360,
+      720,
+      1400
+    ],
+    "alpha": true
+  }
+}

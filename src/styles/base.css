@@ -1,0 +1,474 @@
+/* =========================================================
+   TurboFast Garage — base: fontes, tokens, reset, tipografia
+   ========================================================= */
+
+@font-face {
+  font-family: 'Anton';
+  src: url('/fonts/anton-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter-var.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/jetbrains-mono-var.woff2') format('woff2');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* paleta */
+  --c-black: #050505;
+  --c-graphite: #111111;
+  --c-gray: #202020;
+  --c-white: #f5f5f5;
+  --c-yellow: #ffd400;
+  --c-purple: #6c00ff;
+  --c-purple-2: #9b5cff; /* roxo com contraste para texto sobre preto */
+  --c-muted: rgba(245, 245, 245, 0.66);
+  --c-dim: rgba(245, 245, 245, 0.44);
+  --c-line: rgba(245, 245, 245, 0.11);
+  --c-line-2: rgba(245, 245, 245, 0.24);
+
+  /* tipografia */
+  --f-display: 'Anton', Impact, 'Arial Narrow', sans-serif;
+  --f-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --f-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* layout */
+  --gutter: clamp(16px, 4vw, 64px);
+  --maxw: 1520px;
+  --header-h: 76px;
+  --section-pad: clamp(96px, 12vw, 200px);
+
+  /* movimento */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* canto chanfrado (referência às faixas do logo) */
+  --cut: 14px;
+  --clip-cut: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%);
+}
+
+@media (max-width: 767px) {
+  :root {
+    --header-h: 64px;
+  }
+}
+
+/* ---------- reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background: var(--c-black);
+}
+body {
+  min-height: 100vh;
+  background: var(--c-black);
+  color: var(--c-white);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+img,
+svg,
+video,
+canvas,
+iframe {
+  display: block;
+  max-width: 100%;
+}
+picture {
+  display: contents;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+ul,
+ol {
+  list-style: none;
+}
+strong {
+  font-weight: 600;
+  color: var(--c-white);
+}
+address {
+  font-style: normal;
+}
+::selection {
+  background: var(--c-yellow);
+  color: var(--c-black);
+}
+:focus-visible {
+  outline: 2px solid var(--c-yellow);
+  outline-offset: 3px;
+}
+[inert] {
+  pointer-events: none;
+}
+
+html {
+  scrollbar-color: #333 var(--c-black);
+  scrollbar-width: thin;
+}
+
+/* grão cinematográfico (camada fixa, estática — custo zero no scroll) */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9990;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- utilitários ---------- */
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.section {
+  position: relative;
+  padding-block: var(--section-pad);
+}
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 10002;
+  padding: 12px 18px;
+  background: var(--c-yellow);
+  color: var(--c-black);
+  font-weight: 600;
+  transform: translateY(-160%);
+  transition: transform 0.3s var(--ease);
+}
+.skip-link:focus {
+  transform: none;
+}
+.icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.br-mobile {
+  display: none;
+}
+
+/* ---------- tipografia ---------- */
+.h2 {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: clamp(2.7rem, 6.6vw, 7.2rem);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: -0.005em;
+}
+.lead {
+  font-size: clamp(1.125rem, 1.45vw, 1.375rem);
+  line-height: 1.55;
+  color: var(--c-white);
+  font-weight: 400;
+}
+p {
+  color: var(--c-muted);
+  font-size: clamp(1rem, 1.05vw, 1.0625rem);
+  line-height: 1.7;
+}
+.accent {
+  color: var(--c-yellow);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: clamp(20px, 2.6vw, 36px);
+  font: 500 0.72rem/1.2 var(--f-mono);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+.eyebrow__num {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--c-yellow);
+}
+.eyebrow__num::after {
+  content: '';
+  width: 36px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
+}
+.eyebrow--dark {
+  color: rgba(5, 5, 5, 0.6);
+}
+.eyebrow--dark .eyebrow__num {
+  color: var(--c-purple);
+}
+
+/* máscaras do SplitText: espaço extra para acentos (Ê, Ã) e cedilha (Ç) não serem cortados */
+.split-line-mask {
+  display: block;
+  padding-block: 0.14em 0.08em;
+  margin-block: -0.14em -0.08em;
+}
+.split-line {
+  display: block;
+}
+
+.pulse-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c-yellow);
+  box-shadow: 0 0 0 0 rgba(255, 212, 0, 0.55);
+  animation: pulse-dot 2.2s var(--ease) infinite;
+}
+@keyframes pulse-dot {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 212, 0, 0.55);
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 10px rgba(255, 212, 0, 0);
+  }
+}
+
+/* cantoneiras de "visor" */
+.corner {
+  position: absolute;
+  z-index: 12;
+  width: 18px;
+  height: 18px;
+  border: 0 solid var(--c-yellow);
+  pointer-events: none;
+}
+.corner--tl {
+  top: 10px;
+  left: 10px;
+  border-top-width: 1.5px;
+  border-left-width: 1.5px;
+}
+.corner--tr {
+  top: 10px;
+  right: 10px;
+  border-top-width: 1.5px;
+  border-right-width: 1.5px;
+}
+.corner--bl {
+  bottom: 10px;
+  left: 10px;
+  border-bottom-width: 1.5px;
+  border-left-width: 1.5px;
+}
+.corner--br {
+  bottom: 10px;
+  right: 10px;
+  border-bottom-width: 1.5px;
+  border-right-width: 1.5px;
+}
+
+/* =========================================================
+   Botões
+   ========================================================= */
+.btn {
+  --h: 54px;
+  --btn-bg: transparent;
+  --btn-fg: var(--c-white);
+  --btn-clip: none;
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8em;
+  height: var(--h);
+  padding: 0 1.75em;
+  color: var(--btn-fg);
+  font: 600 0.78rem/1 var(--f-body);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden; /* mantém o brilho do hover dentro do botão (o outline de foco não é cortado) */
+  transition: color 0.45s var(--ease), filter 0.5s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+.btn::before,
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  clip-path: var(--btn-clip);
+  pointer-events: none;
+}
+.btn::before {
+  background: var(--btn-bg);
+  transition: background 0.45s var(--ease), transform 0.6s var(--ease);
+}
+.btn .icon {
+  transition: transform 0.6s var(--ease);
+}
+.btn:hover .icon {
+  transform: translate(2px, -2px);
+}
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* rolagem do texto no hover (montada via JS em dispositivos com mouse) */
+.btn__label {
+  display: inline-block;
+}
+.btn__roll {
+  display: inline-grid;
+  height: 1.25em;
+  line-height: 1.25em;
+  overflow: hidden;
+  vertical-align: top;
+}
+.btn__roll > span {
+  display: block;
+  transition: transform 0.6s var(--ease);
+}
+.btn:hover .btn__roll > span {
+  transform: translateY(-100%);
+}
+
+/* primário: amarelo, canto chanfrado, brilho percorrendo */
+.btn--primary {
+  --btn-bg: var(--c-yellow);
+  --btn-fg: var(--c-black);
+  --btn-clip: var(--clip-cut);
+}
+.btn--primary::after {
+  background: linear-gradient(105deg, transparent 30%, rgba(255, 255, 255, 0.75) 50%, transparent 70%);
+  transform: translateX(-130%);
+}
+.btn--primary:hover::after {
+  transform: translateX(130%);
+  transition: transform 0.9s var(--ease);
+}
+.btn--primary:hover {
+  filter: drop-shadow(0 0 22px rgba(255, 212, 0, 0.38));
+}
+
+/* fantasma: vidro + contorno, preenche de branco */
+.btn--ghost {
+  border: 1px solid var(--c-line-2);
+  background: rgba(5, 5, 5, 0.28);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.btn--ghost::before {
+  background: var(--c-white);
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+.btn--ghost:hover {
+  color: var(--c-black);
+  border-color: var(--c-white);
+}
+.btn--ghost:hover::before {
+  transform: scaleY(1);
+}
+
+/* variações para a seção clara (Details) */
+.btn--dark {
+  --btn-bg: var(--c-black);
+  --btn-fg: var(--c-white);
+  --btn-clip: var(--clip-cut);
+}
+.btn--dark:hover {
+  --btn-bg: var(--c-purple);
+}
+.btn--line-dark {
+  --btn-fg: var(--c-black);
+  border: 1px solid rgba(5, 5, 5, 0.26);
+}
+.btn--line-dark::before {
+  background: var(--c-black);
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+.btn--line-dark:hover {
+  color: var(--c-white);
+}
+.btn--line-dark:hover::before {
+  transform: scaleY(1);
+}
+
+.btn--sm {
+  --h: 40px;
+  --cut: 9px;
+  padding: 0 1.2em;
+  font-size: 0.7rem;
+}
+.btn--lg {
+  --h: 60px;
+  padding: 0 2em;
+}
+.btn--xl {
+  --h: clamp(70px, 7vw, 100px);
+  --cut: 20px;
+  padding: 0 clamp(26px, 3.2vw, 52px);
+  font-size: clamp(0.86rem, 1.35vw, 1.15rem);
+  gap: 1em;
+}
+.btn--xl .icon {
+  width: 1.6em;
+  height: 1.6em;
+}
+.btn--block {
+  width: 100%;
+}
+
+/* =========================================================
+   Acessibilidade de movimento
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
