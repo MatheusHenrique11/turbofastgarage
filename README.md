@@ -14,7 +14,7 @@ npm run build     # gera o site final em dist/
 npm run preview   # serve o dist/ para conferir o build
 ```
 
-Node 18+ (o `npm audit` aponta um aviso no `sharp`, que só roda localmente para processar as fotos; a versão corrigida exige Node 20+).
+Node 20.9+ — o projeto fixa o Node 24 LTS em `.nvmrc` (rode `nvm use` na pasta antes dos comandos).
 
 ## Deploy
 
