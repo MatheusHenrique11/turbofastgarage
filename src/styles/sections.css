@@ -416,6 +416,69 @@
 .statement__hl {
   color: var(--c-yellow);
 }
+.certificates {
+  margin-top: clamp(80px, 10vw, 160px);
+}
+.certificates__head {
+  max-width: 760px;
+}
+.certificates__head .h2 {
+  margin-top: 16px;
+}
+.certificates__intro {
+  max-width: 56ch;
+  margin-top: 20px;
+  color: var(--c-muted);
+}
+.certificates__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: clamp(32px, 5vw, 64px);
+  padding: 0;
+  list-style: none;
+}
+.certificate-card {
+  display: flex;
+  min-height: 210px;
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(20px, 2.5vw, 32px);
+  border: 1px solid var(--c-line);
+  color: var(--c-white);
+  text-decoration: none;
+  transition: border-color 0.25s, background-color 0.25s;
+}
+.certificate-card:hover,
+.certificate-card:focus-visible {
+  border-color: var(--c-yellow);
+  background: rgba(255, 212, 0, 0.04);
+}
+.certificate-card__category {
+  color: var(--c-yellow);
+  font: 500 0.68rem/1.4 var(--f-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.certificate-card__title {
+  margin-top: 24px;
+  font: 400 clamp(1.35rem, 2vw, 1.8rem)/1.08 var(--f-display);
+  text-transform: uppercase;
+}
+.certificate-card__action {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 32px;
+  color: var(--c-muted);
+  font-size: 0.8rem;
+}
+.certificate-card__action span {
+  color: var(--c-yellow);
+}
 
 @media (max-width: 1000px) {
   .about__grid {
@@ -425,12 +488,18 @@
   .about__body {
     justify-self: start;
   }
+  .certificates__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .path__list {
     grid-template-columns: repeat(3, 1fr);
     row-gap: 48px;
   }
 }
 @media (max-width: 899px) {
+  .certificates__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .path__rail {
     top: 0;
     bottom: 0;
@@ -452,6 +521,14 @@
   }
   .path__stop::before {
     top: 4px;
+  }
+}
+@media (max-width: 560px) {
+  .certificates__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .certificate-card {
+    min-height: 180px;
   }
 }
 
