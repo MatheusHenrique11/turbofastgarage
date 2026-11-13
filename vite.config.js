@@ -23,7 +23,8 @@ function tfImg() {
           const img = manifest[name];
           if (!img) throw new Error(`<tf-img>: imagem "${name}" não está em src/data/images.json`);
 
-          const srcset = (ext) => img.widths.map((w) => `/img/${name}-${w}.${ext} ${w}w`).join(', ');
+          const suffix = img.suffix ?? '';
+          const srcset = (ext) => img.widths.map((w) => `/img/${name}-${w}${suffix}.${ext} ${w}w`).join(', ');
           const fallback = img.widths.find((w) => w >= 800) ?? img.widths[img.widths.length - 1];
           const extra = Object.entries(rest)
             .map(([k, v]) => (v === '' && k !== 'alt' ? k : `${k}="${v}"`))
@@ -33,7 +34,7 @@ function tfImg() {
             `<picture>` +
             `<source type="image/avif" srcset="${srcset('avif')}" sizes="${sizes}">` +
             `<source type="image/webp" srcset="${srcset('webp')}" sizes="${sizes}">` +
-            `<img src="/img/${name}-${fallback}.webp" width="${img.w}" height="${img.h}" loading="${loading}" decoding="async" ${extra}>` +
+            `<img src="/img/${name}-${fallback}${suffix}.webp" width="${img.w}" height="${img.h}" loading="${loading}" decoding="async" ${extra}>` +
             `</picture>`
           );
         });

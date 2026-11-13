@@ -20,7 +20,7 @@ mkdirSync(OUT, { recursive: true });
 
 // grade: 'cine' = seções escuras · 'clean' = estética automotiva · 'none' = original
 const photos = [
-  { src: 'i30data.jpeg', name: 'i30-espuma', grade: 'clean' },
+  { src: 'i30-details.jpeg', name: 'i30-espuma', grade: 'clean', suffix: '-details' },
   { src: 'eletrica completa onix.jpg', name: 'eletrica-painel', grade: 'cine' },
   { src: 'eletricaaudia3.jpg', name: 'chicote-avaliacao', grade: 'cine' },
   { src: 'eletricaonix2.jpg', name: 'painel-eletrico', grade: 'cine' },
@@ -29,7 +29,7 @@ const photos = [
   { src: 'eletricagol2.jpeg', name: 'conectores-eletricos', grade: 'cine' },
   { src: 'eletricagol.jpeg', name: 'instalacao-eletrica', grade: 'cine' },
   { src: 'eletricapassat.jpg', name: 'reparo-eletrico', grade: 'cine' },
-  { src: 'logonovo.png', name: 'details-marca', grade: 'none' },
+  { src: 'logonovodetails.png', name: 'details-marca', grade: 'none', suffix: '-details' },
   { src: 'MatheusHenrique.png', name: 'matheus', grade: 'none', widths: [560, 1089] },
 ];
 
@@ -74,11 +74,11 @@ async function graded(file, grade) {
   return { buf: await base.toBuffer(), width, height };
 }
 
-async function emit(buf, name, widths, { alpha = false } = {}) {
+async function emit(buf, name, widths, { alpha = false, suffix = '' } = {}) {
   for (const w of widths) {
     const resized = sharp(buf).resize({ width: w, withoutEnlargement: true });
-    await resized.clone().avif({ quality: alpha ? 60 : 52, effort: 5 }).toFile(join(OUT, `${name}-${w}.avif`));
-    await resized.clone().webp({ quality: 80, alphaQuality: 90, effort: 5 }).toFile(join(OUT, `${name}-${w}.webp`));
+    await resized.clone().avif({ quality: alpha ? 60 : 52, effort: 5 }).toFile(join(OUT, `${name}-${w}${suffix}.avif`));
+    await resized.clone().webp({ quality: 80, alphaQuality: 90, effort: 5 }).toFile(join(OUT, `${name}-${w}${suffix}.webp`));
   }
 }
 
@@ -155,8 +155,8 @@ for (const photo of photos) {
   }
   const widths = widthsFor(width, photo.widths);
   const alpha = photo.src.endsWith('.png');
-  await emit(buf, photo.name, widths, { alpha });
-  manifest[photo.name] = { w: width, h: height, widths, alpha };
+  await emit(buf, photo.name, widths, { alpha, suffix: photo.suffix });
+  manifest[photo.name] = { w: width, h: height, widths, alpha, ...(photo.suffix ? { suffix: photo.suffix } : {}) };
   console.log('✓', photo.name, widths.join(','));
 }
 
@@ -186,7 +186,7 @@ if (!only || 'logo'.includes(only)) {
   const W = 1200;
   const H = 630;
   const photoW = 620;
-  const buf = readFileSync(join(OUT, 'i30-resultado-1440.webp'));
+  const buf = readFileSync(join(OUT, 'i30-resultado-1440-details.webp'));
   const photo = await sharp(buf).resize(photoW, H, { fit: 'cover', position: 'centre' }).toBuffer();
   const fade = Buffer.from(
     `<svg xmlns="http://www.w3.org/2000/svg" width="${photoW}" height="${H}">

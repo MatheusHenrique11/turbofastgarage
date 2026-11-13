@@ -42,7 +42,7 @@ src/styles/             estilos e animações
 src/js/                 módulos de interação
 ```
 
-Para incluir uma foto, adicione o arquivo a `assets/`, cadastre-o em `photos` no `scripts/images.mjs` e rode `npm run images`. O pipeline gera variantes responsivas, que podem ser exibidas com `<tf-img>`.
+Para incluir uma foto, adicione o arquivo a `assets/`, cadastre-o em `photos` no `scripts/images.mjs` e rode `npm run images`. O pipeline gera variantes responsivas, que podem ser exibidas com `<tf-img>`. As imagens de estética e da Turbo Fast Details terminam em `-details` antes da extensão, por exemplo `i30-resultado-1440-details.webp`.
 
 ## Contatos
 

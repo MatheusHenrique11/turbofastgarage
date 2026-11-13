@@ -3,37 +3,43 @@
     "w": 1440,
     "h": 1440,
     "widths": [480, 800, 1200, 1440],
-    "alpha": false
+    "alpha": false,
+    "suffix": "-details"
   },
   "i30-resultado": {
     "w": 1440,
     "h": 1440,
     "widths": [480, 800, 1200, 1440],
-    "alpha": false
+    "alpha": false,
+    "suffix": "-details"
   },
   "i30-porta-malas": {
     "w": 1440,
     "h": 1440,
     "widths": [480, 800, 1200, 1440],
-    "alpha": false
+    "alpha": false,
+    "suffix": "-details"
   },
   "i30-banco-traseiro": {
     "w": 1440,
     "h": 1440,
     "widths": [480, 800, 1200, 1440],
-    "alpha": false
+    "alpha": false,
+    "suffix": "-details"
   },
   "i30-porta": {
     "w": 1440,
     "h": 1440,
     "widths": [480, 800, 1200, 1440],
-    "alpha": false
+    "alpha": false,
+    "suffix": "-details"
   },
   "i30-interior": {
     "w": 1440,
     "h": 1440,
     "widths": [480, 800, 1200, 1440],
-    "alpha": false
+    "alpha": false,
+    "suffix": "-details"
   },
   "eletrica-painel": {
     "w": 1440,
@@ -87,7 +93,8 @@
     "w": 1254,
     "h": 1254,
     "widths": [480, 800, 1254],
-    "alpha": true
+    "alpha": true,
+    "suffix": "-details"
   },
   "logo": {
     "w": 2036,
