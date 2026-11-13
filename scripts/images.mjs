@@ -20,7 +20,8 @@ mkdirSync(OUT, { recursive: true });
 
 // grade: 'cine' = seções escuras · 'clean' = estética automotiva · 'none' = original
 const photos = [
-  { src: 'i30-details.jpeg', name: 'i30-espuma', grade: 'clean', suffix: '-details' },
+  { src: 'lavagem de motor-details.jpg', name: 'motor-lavagem', grade: 'clean', suffix: '-details' },
+  { src: 'motor limpo-details.jpg', name: 'motor-limpo', grade: 'clean', suffix: '-details' },
   { src: 'eletrica completa onix.jpg', name: 'eletrica-painel', grade: 'cine' },
   { src: 'eletricaaudia3.jpg', name: 'chicote-avaliacao', grade: 'cine' },
   { src: 'eletricaonix2.jpg', name: 'painel-eletrico', grade: 'cine' },
@@ -28,7 +29,8 @@ const photos = [
   { src: 'eletricagol3.jpeg', name: 'fiacao-interior', grade: 'cine' },
   { src: 'eletricagol2.jpeg', name: 'conectores-eletricos', grade: 'cine' },
   { src: 'eletricagol.jpeg', name: 'instalacao-eletrica', grade: 'cine' },
-  { src: 'eletricapassat.jpg', name: 'reparo-eletrico', grade: 'cine' },
+  { src: 'eletricapassatinjeçãoeletronicaprogamavel.jpg', name: 'injecao-passat-cofre', grade: 'cine' },
+  { src: 'passatmontadoinjeçãoeletronicaprogamavel.jpg', name: 'injecao-passat-montado', grade: 'cine' },
   { src: 'logonovodetails.png', name: 'details-marca', grade: 'none', suffix: '-details' },
   { src: 'MatheusHenrique.png', name: 'matheus', grade: 'none', widths: [560, 1089] },
 ];

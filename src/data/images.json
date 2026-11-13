@@ -59,9 +59,20 @@
     "alpha": false,
     "suffix": "-details"
   },
-  "i30-espuma": {
-    "w": 1440,
-    "h": 1440,
+  "motor-lavagem": {
+    "w": 2252,
+    "h": 4000,
+    "widths": [
+      480,
+      800,
+      1440
+    ],
+    "alpha": false,
+    "suffix": "-details"
+  },
+  "motor-limpo": {
+    "w": 2252,
+    "h": 4000,
     "widths": [
       480,
       800,
@@ -140,7 +151,17 @@
     ],
     "alpha": false
   },
-  "reparo-eletrico": {
+  "injecao-passat-cofre": {
+    "w": 1512,
+    "h": 2688,
+    "widths": [
+      480,
+      800,
+      1440
+    ],
+    "alpha": false
+  },
+  "injecao-passat-montado": {
     "w": 1512,
     "h": 2688,
     "widths": [
