@@ -1204,7 +1204,7 @@
 }
 .details__services {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   margin-top: clamp(48px, 6vw, 90px);
   border-top: 1px solid rgba(5, 5, 5, 0.14);
 }

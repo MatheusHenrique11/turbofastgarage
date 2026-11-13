@@ -47,7 +47,7 @@ const hero = initHero({ reduced, fine });
 preloader.ready.then(() => {
   // fontes prontas: agora é seguro dividir textos e medir o layout
   initReveals({ reduced });
-  initSections({ reduced, fine });
+  initSections({ reduced });
   initMarquee({ reduced });
   ScrollTrigger.refresh();
 

@@ -5,10 +5,9 @@ import { qs, qsa } from './env.js';
 // Animações específicas de cada seção. Tudo que é movimento fica dentro do
 // gsap.matchMedia: é recriado ao trocar desktop/mobile e ignorado com
 // prefers-reduced-motion. Estados funcionais (passo ativo etc.) funcionam sempre.
-export function initSections({ reduced, fine }) {
+export function initSections({ reduced }) {
   diagSteps(reduced);
   if (reduced) qsa('.path__stop').forEach((s) => s.classList.add('is-on'));
-  if (fine && !reduced) accessoriesPreview();
 
   const mm = gsap.matchMedia();
   mm.add(
@@ -158,47 +157,6 @@ function accessories(desktop) {
     ease: 'expo.out',
     stagger: 0.07,
     scrollTrigger: { trigger: '.accessories__list', start: 'top 85%', once: true },
-  });
-}
-
-// Prévia de imagem que acompanha o cursor sobre a lista de acessórios.
-function accessoriesPreview() {
-  const list = qs('[data-accessories-list]');
-  const preview = qs('.accessories__preview');
-  if (!list || !preview) return;
-  const imgs = qsa('img', preview);
-  const xTo = gsap.quickTo(preview, 'x', { duration: 0.7, ease: 'power3' });
-  const yTo = gsap.quickTo(preview, 'y', { duration: 0.7, ease: 'power3' });
-  const rTo = gsap.quickTo(preview, 'rotation', { duration: 0.9, ease: 'power3' });
-  let lastX = 0;
-  let placed = false;
-
-  list.addEventListener('pointermove', (e) => {
-    if (e.pointerType !== 'mouse') return;
-    const w = preview.offsetWidth;
-    const h = preview.offsetHeight;
-    const x = e.clientX > window.innerWidth * 0.58 ? e.clientX - w - 36 : e.clientX + 36;
-    const y = Math.min(Math.max(e.clientY - h / 2, 80), window.innerHeight - h - 20);
-    if (!placed) {
-      gsap.set(preview, { x, y });
-      placed = true;
-    }
-    xTo(x);
-    yTo(y);
-    rTo(gsap.utils.clamp(-9, 9, (e.clientX - lastX) * 0.5));
-    lastX = e.clientX;
-  });
-  qsa('.accessories__item', list).forEach((item) =>
-    item.addEventListener('pointerenter', (e) => {
-      if (e.pointerType !== 'mouse') return;
-      const i = Number(item.dataset.accessoriesImg);
-      imgs.forEach((im, j) => im.classList.toggle('is-active', j === i));
-      preview.classList.add('is-visible');
-    })
-  );
-  list.addEventListener('pointerleave', () => {
-    preview.classList.remove('is-visible');
-    placed = false;
   });
 }
 
