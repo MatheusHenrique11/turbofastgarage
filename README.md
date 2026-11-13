@@ -34,6 +34,7 @@ O build gera `canonical`, Open Graph, JSON-LD, `robots.txt` e `sitemap.xml`.
 ```
 assets/                 originais das fotos e vídeos
 public/img/             imagens otimizadas em AVIF e WebP
+public/videos/          vídeos H.264 compactados e posters WebP
 scripts/images.mjs      pipeline de imagens e imagem Open Graph
 index.html              conteúdo e metadados do site
 site.config.js          contatos, redes sociais e dados para SEO
@@ -43,6 +44,8 @@ src/js/                 módulos de interação
 ```
 
 Para incluir uma foto, adicione o arquivo a `assets/`, cadastre-o em `photos` no `scripts/images.mjs` e rode `npm run images`. O pipeline gera variantes responsivas, que podem ser exibidas com `<tf-img>`. As imagens de estética e da Turbo Fast Details terminam em `-details` antes da extensão, por exemplo `i30-resultado-1440-details.webp`.
+
+Os vídeos da injeção programável são exibidos em `index.html` com controles, sem reprodução automática e sem áudio. Os MP4 H.264 compactados e seus posters ficam em `public/videos/`; os arquivos originais são preservados em `assets/`.
 
 ## Contatos
 
