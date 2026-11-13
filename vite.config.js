@@ -4,7 +4,7 @@ import { SITE } from './site.config.js';
 
 const manifestPath = new URL('./src/data/images.json', import.meta.url);
 
-// <tf-img name="bmw-435i" alt="..." sizes="50vw" class="..."></tf-img>
+// <tf-img name="imagem" alt="..." sizes="50vw" class="..."></tf-img>
 // vira um <picture> com AVIF + WebP responsivos (gerados por `npm run images`).
 // O HTML final é estático: nada disso depende de JavaScript no navegador.
 function tfImg() {
@@ -42,18 +42,19 @@ function tfImg() {
   };
 }
 
-// SEO local: JSON-LD (AutoRepair ⊂ AutomotiveBusiness), canonical, robots e sitemap.
+// SEO local: JSON-LD, canonical, robots e sitemap.
 function seo() {
   const abs = (path) => (SITE.url ? SITE.url + path : path);
 
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'AutoRepair',
+    '@type': 'AutomotiveBusiness',
     name: SITE.name,
     description: SITE.description,
     image: abs('/og-image.jpg'),
     logo: abs('/img/logo-1400.png'),
     telephone: SITE.telephone,
+    email: SITE.email,
     founder: { '@type': 'Person', name: SITE.founder },
     address: {
       '@type': 'PostalAddress',
@@ -76,12 +77,20 @@ function seo() {
       '@type': 'Offer',
       itemOffered: { '@type': 'Service', name },
     })),
-    ...(SITE.url ? { url: SITE.url + '/', '@id': SITE.url + '/#oficina' } : {}),
+    ...(SITE.url ? { url: SITE.url + '/', '@id': SITE.url + '/#empresa' } : {}),
   };
 
   return {
     name: 'tf-seo',
     transformIndexHtml(html) {
+      html = html
+        .replaceAll('__WHATSAPP_NUMBER__', SITE.whatsapp.number)
+        .replaceAll('__WHATSAPP_DISPLAY__', SITE.whatsapp.display)
+        .replaceAll('__CONTACT_EMAIL__', SITE.email)
+        .replaceAll('__INSTAGRAM_GARAGE_URL__', SITE.instagram.garage.url)
+        .replaceAll('__INSTAGRAM_GARAGE_HANDLE__', SITE.instagram.garage.handle)
+        .replaceAll('__INSTAGRAM_DETAILS_URL__', SITE.instagram.details.url)
+        .replaceAll('__INSTAGRAM_DETAILS_HANDLE__', SITE.instagram.details.handle);
       const tags = [
         {
           tag: 'script',

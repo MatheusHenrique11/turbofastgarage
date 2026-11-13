@@ -1,4 +1,4 @@
-// Pipeline de imagens da TurboFast Garage.
+// Pipeline de imagens da Turbo Fast Garage.
 // Lê as fotos originais em /assets, aplica o tratamento de cor e gera
 // AVIF + WebP em múltiplas larguras em /public/img, além de um manifesto
 // (src/data/images.json) usado pelo plugin <tf-img> do vite.config.js.
@@ -18,34 +18,27 @@ const MANIFEST = join(ROOT, 'src/data/images.json');
 
 mkdirSync(OUT, { recursive: true });
 
-// grade: 'cine' = seções escuras (oficina/preparação) · 'clean' = detailing · 'none' = original
+// grade: 'cine' = seções escuras · 'clean' = estética automotiva · 'none' = original
 const photos = [
-  { src: 'bmwx2.jpeg', name: 'bmw-x2', grade: 'cine' },
-  { src: 'bmw435i.jpeg', name: 'bmw-435i', grade: 'cine' },
-  { src: 'peugeot308.jpeg', name: 'peugeot-308', grade: 'cine' },
-  { src: 'preparandopramontagem.jpeg', name: 'bancada-cabecote', grade: 'cine' },
-  { src: 'azera2009.jpeg', name: 'azera', grade: 'cine' },
-  { src: 'opala.jpeg', name: 'opala-motor', grade: 'cine' },
-  { src: 'motoropala.jpeg', name: 'opala-bloco', grade: 'cine' },
-  { src: 'motoropalapintado.jpeg', name: 'opala-pintura', grade: 'cine' },
-  { src: 'motoropalapintado1.jpeg', name: 'opala-montagem', grade: 'cine' },
   { src: 'i30data.jpeg', name: 'i30-espuma', grade: 'clean' },
-  { src: 'i30datatils.jpeg', name: 'i30-resultado', grade: 'clean' },
-  { src: 'i30datails.jpeg', name: 'i30-porta-malas', grade: 'clean' },
-  { src: 'i30datails1.jpeg', name: 'i30-banco-traseiro', grade: 'clean' },
-  { src: 'i30datails2.jpeg', name: 'i30-porta', grade: 'clean' },
-  { src: 'WhatsApp Image 2026-09-28 at 20.13.35.jpeg', name: 'i30-interior', grade: 'clean' },
-  { src: 'TurboFastDatails.jpeg', name: 'details-marca', grade: 'none' },
+  { src: 'eletrica completa onix.jpg', name: 'eletrica-painel', grade: 'cine' },
+  { src: 'eletricaaudia3.jpg', name: 'chicote-avaliacao', grade: 'cine' },
+  { src: 'eletricaonix2.jpg', name: 'painel-eletrico', grade: 'cine' },
+  { src: 'eletricaonix.jpg', name: 'cofre-eletrico', grade: 'cine' },
+  { src: 'eletricagol3.jpeg', name: 'fiacao-interior', grade: 'cine' },
+  { src: 'eletricagol2.jpeg', name: 'conectores-eletricos', grade: 'cine' },
+  { src: 'eletricagol.jpeg', name: 'instalacao-eletrica', grade: 'cine' },
+  { src: 'eletricapassat.jpg', name: 'reparo-eletrico', grade: 'cine' },
+  { src: 'logonovo.png', name: 'details-marca', grade: 'none' },
   { src: 'MatheusHenrique.png', name: 'matheus', grade: 'none', widths: [560, 1089] },
 ];
 
-const CANDIDATE_WIDTHS = [480, 800, 1200, 1600];
+const CANDIDATE_WIDTHS = [480, 800, 1440];
 
 function widthsFor(original, preset) {
   if (preset) return preset.filter((w) => w <= original);
   const list = CANDIDATE_WIDTHS.filter((w) => w < original);
-  if (original <= 1600) {
-    // evita pares quase idênticos (ex.: 1200 e 1202)
+  if (original <= 1440) {
     if (list.length && original - list[list.length - 1] < 240) list.pop();
     list.push(original);
   }
@@ -144,12 +137,22 @@ async function cutoutLogo(file) {
 
 // `npm run images -- logo` reprocessa só o que tiver "logo" no nome
 const only = process.argv[2];
-const manifest = only ? JSON.parse(readFileSync(MANIFEST, 'utf8')) : {};
+const existingManifest = JSON.parse(readFileSync(MANIFEST, 'utf8'));
+const retainedNames = ['i30-resultado', 'i30-porta-malas', 'i30-banco-traseiro', 'i30-porta', 'i30-interior'];
+const manifest = only
+  ? existingManifest
+  : Object.fromEntries(retainedNames.filter((name) => existingManifest[name]).map((name) => [name, existingManifest[name]]));
 
 for (const photo of photos) {
   if (only && !photo.name.includes(only)) continue;
   const file = join(SRC, photo.src);
-  const { buf, width, height } = await graded(file, photo.grade);
+  let { buf, width, height } = await graded(file, photo.grade);
+  if (photo.name === 'details-marca') {
+    buf = await sharp(buf).trim({ threshold: 1 }).png().toBuffer();
+    const dimensions = await sharp(buf).metadata();
+    width = dimensions.width;
+    height = dimensions.height;
+  }
   const widths = widthsFor(width, photo.widths);
   const alpha = photo.src.endsWith('.png');
   await emit(buf, photo.name, widths, { alpha });
@@ -178,12 +181,12 @@ if (!only) {
   console.log('✓ ícones');
 }
 
-// Open Graph 1200x630: logo à esquerda, foto da oficina à direita com fade
+// Open Graph 1200x630: logo à esquerda, foto de estética automotiva à direita.
 if (!only || 'logo'.includes(only)) {
   const W = 1200;
   const H = 630;
   const photoW = 620;
-  const { buf } = await graded(join(SRC, 'bmwx2.jpeg'), 'cine');
+  const buf = readFileSync(join(OUT, 'i30-resultado-1440.webp'));
   const photo = await sharp(buf).resize(photoW, H, { fit: 'cover', position: 'centre' }).toBuffer();
   const fade = Buffer.from(
     `<svg xmlns="http://www.w3.org/2000/svg" width="${photoW}" height="${H}">

@@ -8,7 +8,7 @@ import { qs, qsa } from './env.js';
 export function initSections({ reduced, fine }) {
   diagSteps(reduced);
   if (reduced) qsa('.path__stop').forEach((s) => s.classList.add('is-on'));
-  if (fine && !reduced) prepPreview();
+  if (fine && !reduced) accessoriesPreview();
 
   const mm = gsap.matchMedia();
   mm.add(
@@ -21,7 +21,7 @@ export function initSections({ reduced, fine }) {
       owner();
       services(desktop);
       diag();
-      prep(desktop);
+      accessories(desktop);
       details(desktop);
       gallery(desktop);
       footer();
@@ -31,7 +31,7 @@ export function initSections({ reduced, fine }) {
 
 const scrub = (trigger, extra = {}) => ({ trigger, start: 'top bottom', end: 'bottom top', scrub: true, ...extra });
 
-/* ---------- A TurboFast: trajetória ---------- */
+/* ---------- A Turbo Fast: trajetória ---------- */
 function about(desktop) {
   const path = qs('[data-path]');
   const stops = qsa('.path__stop');
@@ -91,7 +91,7 @@ function services(desktop) {
   });
 }
 
-/* ---------- Diagnóstico ---------- */
+/* ---------- Elétrica automotiva ---------- */
 function diagSteps(reduced) {
   const steps = qsa('[data-step]');
   const imgs = qsa('[data-step-img]');
@@ -136,36 +136,35 @@ function diag() {
   });
 }
 
-/* ---------- Preparação ---------- */
-function prep(desktop) {
-  gsap.fromTo('.prep__turbo', { rotation: -40 }, { rotation: 320, ease: 'none', scrollTrigger: scrub('.prep') });
-  const [band, line] = qsa('.prep__stripes span');
-  gsap.fromTo(band, { x: '-8vw' }, { x: '8vw', ease: 'none', scrollTrigger: scrub('.prep') });
-  gsap.fromTo(line, { x: '10vw' }, { x: '-10vw', ease: 'none', scrollTrigger: scrub('.prep') });
+/* ---------- Som e acessórios ---------- */
+function accessories(desktop) {
+  const [band, line] = qsa('.accessories__stripes span');
+  gsap.fromTo(band, { x: '-8vw' }, { x: '8vw', ease: 'none', scrollTrigger: scrub('.accessories') });
+  gsap.fromTo(line, { x: '10vw' }, { x: '-10vw', ease: 'none', scrollTrigger: scrub('.accessories') });
 
-  qsa('.prep__fig').forEach((fig, i) => {
+  qsa('.accessories__fig').forEach((fig, i) => {
     const img = fig.querySelector('img');
     gsap
-      .timeline({ scrollTrigger: { trigger: '.prep__media', start: 'top 80%', once: true } })
+      .timeline({ scrollTrigger: { trigger: '.accessories__media', start: 'top 80%', once: true } })
       .fromTo(fig, { clipPath: 'inset(100% 0% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.5, ease: 'expo.out', delay: i * 0.15 })
       .fromTo(img, { scale: 1.3 }, { scale: 1, duration: 2, ease: 'expo.out' }, '<');
-    if (desktop) gsap.fromTo(fig, { yPercent: i ? 18 : 6 }, { yPercent: i ? -14 : -6, ease: 'none', scrollTrigger: scrub('.prep__media') });
+    if (desktop) gsap.fromTo(fig, { yPercent: i ? 18 : 6 }, { yPercent: i ? -14 : -6, ease: 'none', scrollTrigger: scrub('.accessories__media') });
   });
 
-  gsap.from('.prep__item', {
+  gsap.from('.accessories__item', {
     x: -50,
     autoAlpha: 0,
     duration: 1.1,
     ease: 'expo.out',
     stagger: 0.07,
-    scrollTrigger: { trigger: '.prep__list', start: 'top 85%', once: true },
+    scrollTrigger: { trigger: '.accessories__list', start: 'top 85%', once: true },
   });
 }
 
-// prévia de imagem que segue o cursor sobre a lista de especialidades
-function prepPreview() {
-  const list = qs('[data-prep-list]');
-  const preview = qs('.prep__preview');
+// Prévia de imagem que acompanha o cursor sobre a lista de acessórios.
+function accessoriesPreview() {
+  const list = qs('[data-accessories-list]');
+  const preview = qs('.accessories__preview');
   if (!list || !preview) return;
   const imgs = qsa('img', preview);
   const xTo = gsap.quickTo(preview, 'x', { duration: 0.7, ease: 'power3' });
@@ -189,10 +188,10 @@ function prepPreview() {
     rTo(gsap.utils.clamp(-9, 9, (e.clientX - lastX) * 0.5));
     lastX = e.clientX;
   });
-  qsa('.prep__item', list).forEach((item) =>
+  qsa('.accessories__item', list).forEach((item) =>
     item.addEventListener('pointerenter', (e) => {
       if (e.pointerType !== 'mouse') return;
-      const i = Number(item.dataset.prepImg);
+      const i = Number(item.dataset.accessoriesImg);
       imgs.forEach((im, j) => im.classList.toggle('is-active', j === i));
       preview.classList.add('is-visible');
     })

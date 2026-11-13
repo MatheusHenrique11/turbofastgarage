@@ -1,16 +1,29 @@
-// Dados do negócio usados para SEO (Schema.org, canonical, sitemap).
-// Os links visíveis (WhatsApp, Instagram, Maps) ficam direto no index.html.
+// Dados do negócio usados no SEO e na substituição dos links no HTML.
 
 export const SITE = {
-  // Preencha com o domínio definitivo (sem barra no final) antes do deploy,
-  // ex.: 'https://www.turbofastgarage.com.br'. Com ele preenchido o build
-  // gera <link rel="canonical">, og:url, og:image absoluto e sitemap.xml.
-  url: process.env.SITE_URL || '',
+  // O build gera canonical, Open Graph e sitemap para este endereço.
+  url: process.env.SITE_URL || 'https://turbofastgarage.vercel.app',
 
-  name: 'TurboFast Garage',
+  name: 'Turbo Fast Garage',
   description:
-    'TurboFast Garage em São José dos Campos. Manutenção, diagnóstico, preparação e estética automotiva com experiência, precisão e atenção aos detalhes.',
-  telephone: '+55 12 93485-7571',
+    'Elétrica e eletrônica automotiva, chicotes, injeção programável, som, acessórios e estética automotiva em São José dos Campos, no Parque Novo Horizonte.',
+  telephone: '+5512981606882',
+  whatsapp: {
+    number: '5512981606882',
+    display: '+55 12 98160-6882',
+  },
+  email: 'gturbofast@gmail.com',
+  instagram: {
+    garage: {
+      handle: '@turbofast.garage',
+      url: 'https://www.instagram.com/turbofast.garage/',
+    },
+    details: {
+      handle: '@turbofast.details',
+      url: 'https://www.instagram.com/turbofast.details/',
+    },
+  },
+  tiktok: 'https://www.tiktok.com/@turbofast.garage',
   founder: 'Matheus Henrique',
   address: {
     streetAddress: 'Rua das Datilógrafas, 290',
@@ -24,13 +37,12 @@ export const SITE = {
     'https://www.google.com/maps/search/?api=1&query=Rua%20das%20Datil%C3%B3grafas%2C%20290%20-%20Parque%20Novo%20Horizonte%2C%20S%C3%A3o%20Jos%C3%A9%20dos%20Campos%20-%20SP%2C%2012225-820',
   sameAs: [
     'https://www.instagram.com/turbofast.garage/',
-    'https://www.instagram.com/turbofast.datails/',
+    'https://www.instagram.com/turbofast.details/',
     'https://www.tiktok.com/@turbofast.garage',
   ],
   services: [
-    'Manutenção automotiva',
-    'Diagnóstico automotivo',
-    'Preparação automotiva',
+    'Elétrica e eletrônica automotiva',
+    'Som e acessórios automotivos',
     'Estética automotiva e detailing',
   ],
 };

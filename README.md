@@ -1,69 +1,56 @@
-# TurboFast Garage — site institucional
+# Turbo Fast Garage — site institucional
 
-Site one-page da TurboFast Garage (São José dos Campos/SP): manutenção, diagnóstico, preparação e detailing.
+Site one-page da Turbo Fast Garage, em São José dos Campos/SP, com foco em elétrica e eletrônica automotiva, som e acessórios e estética automotiva (Turbo Fast Details).
 
-**Stack:** Vite · JavaScript puro (ES modules) · GSAP + ScrollTrigger + SplitText · Lenis · sharp (pipeline de imagens).
-Sem framework de UI: o HTML final é estático (bom para SEO e velocidade) e o JavaScript só adiciona as animações.
+**Stack:** Vite · JavaScript ES modules · GSAP + ScrollTrigger + SplitText · Lenis · sharp.
+O conteúdo principal é HTML estático; o JavaScript complementa a navegação e as animações.
 
 ## Rodando
 
 ```bash
 npm install
-npm run dev       # desenvolvimento em http://localhost:5173
-npm run build     # gera o site final em dist/
+npm run dev       # gera as imagens e inicia o Vite
+npm run build     # otimiza as imagens e gera dist/
 npm run preview   # serve o dist/ para conferir o build
 ```
 
-Node 20.9+ — o projeto fixa o Node 24 LTS em `.nvmrc` (rode `nvm use` na pasta antes dos comandos).
+O projeto requer Node 20.9+ e fixa Node 24 LTS em `.nvmrc`.
 
-## Deploy
+## Publicação e SEO
 
-O conteúdo de `dist/` é estático e funciona em qualquer hospedagem (Netlify, Vercel, Cloudflare Pages, hospedagem comum).
+O endereço canônico padrão é `https://turbofastgarage.vercel.app`. Para gerar os metadados e o sitemap para outro domínio:
 
-Antes do deploy, defina o domínio definitivo para gerar `canonical`, `og:url`, `og:image` absoluto e `sitemap.xml`:
+No PowerShell:
 
-```bash
-SITE_URL=https://www.seudominio.com.br npm run build
+```powershell
+$env:SITE_URL = "https://www.seudominio.com.br"
+npm run build
 ```
 
-(ou preencha `url` em `site.config.js`). Sem isso o site funciona normalmente, só sem essas tags.
+O build gera `canonical`, Open Graph, JSON-LD, `robots.txt` e `sitemap.xml`.
 
-## Estrutura
+## Estrutura e imagens
 
 ```
-assets/                 fotos originais (fonte — não vão para o site)
-public/img/             fotos otimizadas geradas (AVIF + WebP, várias larguras)
-public/fonts/           Anton, Inter e JetBrains Mono (self-hosted, com preload)
-scripts/images.mjs      tratamento de cor + geração das imagens, logo sem fundo, ícones, og-image
-index.html              todo o conteúdo e textos do site
-site.config.js          dados do negócio para SEO (Schema.org AutoRepair)
-vite.config.js          plugin <tf-img> e plugin de SEO
-src/styles/             base.css (tokens, tipografia, botões) · layout.css · sections.css
-src/js/                 um módulo por responsabilidade (preloader, hero, header, seções...)
+assets/                 originais das fotos e vídeos
+public/img/             imagens otimizadas em AVIF e WebP
+scripts/images.mjs      pipeline de imagens e imagem Open Graph
+index.html              conteúdo e metadados do site
+site.config.js          contatos, redes sociais e dados para SEO
+vite.config.js          HTML responsivo e geração de SEO
+src/styles/             estilos e animações
+src/js/                 módulos de interação
 ```
 
-## Fotos
+Para incluir uma foto, adicione o arquivo a `assets/`, cadastre-o em `photos` no `scripts/images.mjs` e rode `npm run images`. O pipeline gera variantes responsivas, que podem ser exibidas com `<tf-img>`.
 
-1. Coloque a foto original em `assets/`.
-2. Adicione uma linha em `photos` no `scripts/images.mjs` (nome + tratamento: `cine` para seções escuras, `clean` para detailing).
-3. Rode `npm run images` (ou `npm run images -- nome` para reprocessar só uma).
-4. Use no HTML: `<tf-img name="nome" alt="descrição" sizes="50vw"></tf-img>` — no build isso vira um `<picture>` com AVIF/WebP responsivos.
+## Contatos
 
-Fotos que valorizariam ainda mais o site (hoje não existem no acervo e **não** foram simuladas):
-scanner automotivo em uso, elevador, mecânico trabalhando, polimento, rodas e fachada da oficina.
-A seção de diagnóstico e a galeria recebem novas fotos sem mudar o layout.
-
-## Links e mensagens
-
-- Todos os botões de WhatsApp apontam para `https://wa.me/5512934857571` com mensagem pré-preenchida conforme o contexto (diagnóstico, preparação, detailing, visita). Para mudar, edite o `?text=` no `index.html`.
-- No contato, os botões de assunto trocam a mensagem do botão principal (`src/js/contact.js`).
-- Instagram da oficina, Instagram do detailing e TikTok ficam separados em todos os pontos do site.
+WhatsApp, e-mail e os perfis do Instagram ficam centralizados em `site.config.js`. As mensagens contextuais do WhatsApp são configuradas nos atributos `data-wa-message` do HTML; os assuntos do formulário definem mensagens próprias.
 
 ## Acessibilidade e desempenho
 
-- `prefers-reduced-motion`: sem smooth scroll, sem animações de entrada, preloader curto, todo o conteúdo visível.
-- Sem JavaScript o site continua completo (preloader some, imagens abrem direto).
-- Cursor personalizado apenas em mouse; em touch o scroll é nativo.
-- Imagens com `loading="lazy"`, dimensões fixas (sem layout shift), hero com `fetchpriority="high"` + preload.
-- Code splitting: GSAP/Lenis em chunk próprio; cursor e lightbox baixados só quando usados.
-# turbofastgarage
+- Respeita `prefers-reduced-motion`; o conteúdo continua disponível sem JavaScript.
+- Scroll nativo em telas de toque e cursor personalizado somente para mouse.
+- Imagens responsivas em AVIF/WebP, com dimensões, carregamento tardio e preload da imagem principal.
+- Estados de foco visíveis e navegação por teclado.

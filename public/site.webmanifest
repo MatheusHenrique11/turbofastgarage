@@ -1,7 +1,7 @@
 {
-  "name": "TurboFast Garage",
-  "short_name": "TurboFast",
-  "description": "Oficina mecânica, preparação e detailing em São José dos Campos.",
+  "name": "Turbo Fast Garage",
+  "short_name": "Turbo Fast",
+  "description": "Elétrica e eletrônica automotiva, som e acessórios e estética automotiva em São José dos Campos, no Parque Novo Horizonte.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#050505",
