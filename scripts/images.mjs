@@ -57,8 +57,9 @@ const vignette = (w, h) =>
   );
 
 async function graded(file, grade) {
-  const base = sharp(file).rotate();
-  const { width, height } = await base.metadata();
+  const { data: oriented, info } = await sharp(file).rotate().toBuffer({ resolveWithObject: true });
+  const { width, height } = info;
+  const base = sharp(oriented);
   if (grade === 'cine') {
     const buf = await base
       .modulate({ brightness: 0.86, saturation: 0.72 })
@@ -71,7 +72,7 @@ async function graded(file, grade) {
     const buf = await base.modulate({ brightness: 1.0, saturation: 0.86 }).linear(1.06, -6).toBuffer();
     return { buf, width, height };
   }
-  return { buf: await base.toBuffer(), width, height };
+  return { buf: oriented, width, height };
 }
 
 async function emit(buf, name, widths, { alpha = false, suffix = '' } = {}) {
